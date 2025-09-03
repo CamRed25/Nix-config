@@ -1,10 +1,5 @@
 # common.nix
-{
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   networking = {
     hostName = "cam";
     networkmanager.enable = true;

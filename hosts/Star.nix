@@ -1,9 +1,5 @@
 # Desktop configuration for Star
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   boot = {
     kernelPackages = pkgs.linuxPackages;
     kernelModules = [

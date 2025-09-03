@@ -1,5 +1,29 @@
 {
   "pins": {
+    "NUR": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/nix-community/NUR.git"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "46545ca20af217314b9176c44f74c1a9f025c8f1",
+      "url": null,
+      "hash": "0vf5m4lanagbqk4fzvqwm8d9gfi63b582f8xbwf8liqrk3dvgxph"
+    },
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/nix-community/home-manager.git"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "30fc1b532645a21e157b6e33e3f8b4c154f86382",
+      "url": null,
+      "hash": "1bw1i8nq9s3ps30knyjp7p2kyz5vq6cy4hhh6q9rq60gxhqm3fsx"
+    },
     "nix-index-database": {
       "type": "Git",
       "repository": {
@@ -30,29 +54,17 @@
       "url": null,
       "hash": "19irh8bmsphs1ia4dd1fza0hzdl6g7pga2fd2i2fv4v8bjrkmvrn"
     },
-    "nur-combined": {
+    "nyx": {
       "type": "Git",
       "repository": {
         "type": "Git",
-        "url": "https://github.com/nix-community/nur-combined.git"
+        "url": "https://github.com/chaotic-cx/nyx.git"
       },
       "branch": "main",
       "submodules": false,
-      "revision": "1b2d1bb691579787218828490b5ac6a91e007eb6",
+      "revision": "9e9e58125b4ba190658235106858f9733b25a1b4",
       "url": null,
-      "hash": "121bc15sxr9djqf1277h846xwk8zmvk9b88z2hf7vl75jhkl995a"
-    },
-    "spicetify-nix": {
-      "type": "Git",
-      "repository": {
-        "type": "Git",
-        "url": "https://github.com/Gerg-L/spicetify-nix.git"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "374eb5d97092b97f7aaafd58a2012943b388c0df",
-      "url": null,
-      "hash": "0njd6p2xc5h8cqwsp0j5dq7010h06l50ak9yjs04425xjfck6axb"
+      "hash": "0dgck9jmrncd7r7w2chpzgq2fnninjdd4s7zk2sw8m8bmp1crhcm"
     }
   },
   "version": 5

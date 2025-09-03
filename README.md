@@ -2,37 +2,52 @@
 
 Welcome to my NixOS journey! 🎉
 
-This repository holds my personal NixOS configuration setup. As this is my *very first* time diving into actual coding and config editing, I'm both excited and happy to start exploring the power of NixOS.
+This repository contains my personal NixOS configuration setup. As this is my *first* time working with coding and config editing, I'm excited to explore the power of NixOS.
 
 ---
 
 ## About This Repo
 
-- This is a work in progress — expect changes and improvements as I learn more.
-- I’m experimenting and learning, so things may not always be perfect.
-- My goal is to build a solid, reproducible, and personalized NixOS system configuration.
+- **Work in Progress:** Expect ongoing changes and improvements as I learn.
+- **Learning & Experimentation:** Things may not always be perfect; I'm experimenting and learning as I go.
+- **Goal:** Build a solid, reproducible, and personalized NixOS system configuration.
+- **Deployment Tools:** I'm considering using [nilla](https://github.com/nilla-nix/nilla) or another deployment tool.
+- **Window Manager/Compositor:** Planning to include a Wayland compositor (e.g., Sway or Wayfire).
 
+---
+
+## Directory Structure
+
+- **hosts/**: Future setup for managing configurations for multiple systems.
+- **scripts/**: Contains rebuild and formatting scripts for my system.
+
+---
+
+## Notes
+
+- **X11 vs Wayland:** I currently use X11 daily because Wayland with NVIDIA results in low FPS for gaming, while X11 performs normally.
+- **Secrets Management:** My `configuration.nix` currently contains some sensitive commands. I plan to use [agenix](https://github.com/ryantm/agenix) or [sops](https://github.com/Mic92/sops-nix) for secret management once I learn more about them.
 
 ---
 
 ## Contributions & Collaboration
 
-I would love to hear from you! If you have ideas, improvements, or fixes, please feel free to open a Pull Request (PR). I welcome and appreciate any feedback or suggestions!
+I welcome ideas, improvements, or fixes! Please open a Pull Request (PR) or share feedback and suggestions.
 
-If you find any issues or if something isn't working right, please let me know. I’ll do my best to help! Most likely, I might be facing similar challenges, so we can figure things out together.
+If you encounter issues or something isn't working, let me know. I’m likely facing similar challenges, so we can figure things out together.
 
 ---
 
 ## Getting Started
 
-If you'd like to use or learn from this configuration, please do! Feel free to clone, inspect, and adapt it for your own needs.
+Feel free to clone, inspect, and adapt this configuration for your own needs.
 
 ---
 
 ## A Little About Me
 
-> "As a newcomer to both NixOS and system configurations, I'm learning as I go. This repository is as much a personal learning journal as it is a functional setup. I appreciate you stopping by to check it out, and I'm excited to be on this NixOS journey with you. Happy hacking! 🚀"
- 
+> "As a newcomer to NixOS and system configurations, I'm learning as I go. This repository is both a personal learning journal and a functional setup. Thanks for stopping by, and happy hacking! 🚀"
+
 ---
 
 *Cheers,*

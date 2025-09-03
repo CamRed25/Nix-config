@@ -8,9 +8,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "fe2f250471ec4596947d7a9aa0e2ce677e1cb7df",
+      "revision": "bffccde9bd7869ab355b76d53fbc25ac1f7d37eb",
       "url": null,
-      "hash": "0dvb3hmbvz79dmny5fsxzz5gcmkvnxhi2fbzkjssqbbmyl2fzdkz"
+      "hash": "0zz5d55751p33qc1v45abb8hvdjyhkc0hqhr0k0l03f2zcx29gnq"
     },
     "home-manager": {
       "type": "Git",

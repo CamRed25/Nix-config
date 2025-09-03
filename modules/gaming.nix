@@ -1,3 +1,4 @@
+# gaming.nix
 {pkgs, ...}: {
   programs = {
     steam = {
@@ -39,22 +40,23 @@
       enable = true;
       enableRenice = true;
     };
-    #java = {
-    #  enable = true;
-    #  package = pkgs.jdk24;
-    #};
-    #If you need to use this as well either uncomment and dont use dev.nix or use dev.nix as well.
+    # java = {
+    #   enable = true;
+    #   package = pkgs.jdk24;
+    # };
+    # If you need to use this as well either uncomment and don't use dev.nix or use dev.nix as well.
     obs-studio = {
       enable = true;
       enableVirtualCamera = true;
       plugins = with pkgs.obs-studio-plugins; [obs-websocket];
     };
   };
+
   environment.systemPackages = with pkgs; [
     beyond-all-reason
     mindustry
     prismlauncher
-    ##limo
+    # limo
     starsector
     heroic
     mangohud

@@ -1,3 +1,4 @@
+# dev.nix
 {
   lib,
   config,
@@ -38,6 +39,7 @@
       package = pkgs.jdk24;
     };
   };
+
   environment.systemPackages = with pkgs; [
     # formatters/linters
     alejandra

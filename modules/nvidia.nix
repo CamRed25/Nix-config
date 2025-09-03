@@ -1,3 +1,4 @@
+# nvidia.nix
 {
   pkgs,
   config,
@@ -22,6 +23,7 @@
         libvdpau-va-gl
       ];
     };
+
     # === NVIDIA Settings ===
     nvidia = {
       modesetting.enable = true;

@@ -5,8 +5,8 @@ cd "$(dirname "$0")"
 echo "Evaluating nixpkgs pin..."
 nixpkgs_pin=$(nix eval --raw -f ../npins/default.nix nixpkgs)
 
-#echo "Evaluating home-manager pin..."
-#home_manager_pin=$(nix eval --raw -f npins/default.nix home-manager)
+echo "Evaluating home-manager pin..."
+home_manager_pin=$(nix eval --raw -f ../npins/default.nix home-manager)
 
 nix_path="nixpkgs=${nixpkgs_pin}:home-manager=${home_manager_pin}:nixos-config=/home/cam/Nix-config/configuration.nix"
 

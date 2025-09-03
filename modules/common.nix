@@ -1,4 +1,4 @@
-#common.nix
+# common.nix
 {
   lib,
   config,
@@ -9,17 +9,13 @@
     hostName = "cam";
     networkmanager.enable = true;
   };
+
   programs = {
-    firefox = {
-      enable = true;
-    };
-    thunderbird = {
-      enable = true;
-    };
-    command-not-found = {
-      enable = false;
-    };
+    firefox.enable = true;
+    thunderbird.enable = true;
+    command-not-found.enable = false;
   };
+
   environment.systemPackages = with pkgs; [
     keepassxc
   ];

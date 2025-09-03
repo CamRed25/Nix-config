@@ -1,0 +1,59 @@
+{
+  "pins": {
+    "nix-index-database": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/nix-community/nix-index-database.git"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3fe768e1f058961095b4a0d7a2ba15dc9736bdc6",
+      "url": null,
+      "hash": "1wc8y3diczlqjcn2ganr8v75sbfx2c8rl6qjhavmdw9aa3lma2gy"
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre854301.37ff64b71085/nixexprs.tar.xz",
+      "hash": "042pizl9aizmzgbprvn313sldjkkdgg5p760j3ms37aqwjxq7915"
+    },
+    "npins": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/andir/npins.git"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "e4683671e145c652c371b6b8ad9b0d757c88853c",
+      "url": null,
+      "hash": "19irh8bmsphs1ia4dd1fza0hzdl6g7pga2fd2i2fv4v8bjrkmvrn"
+    },
+    "nur-combined": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/nix-community/nur-combined.git"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "1b2d1bb691579787218828490b5ac6a91e007eb6",
+      "url": null,
+      "hash": "121bc15sxr9djqf1277h846xwk8zmvk9b88z2hf7vl75jhkl995a"
+    },
+    "spicetify-nix": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/Gerg-L/spicetify-nix.git"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "374eb5d97092b97f7aaafd58a2012943b388c0df",
+      "url": null,
+      "hash": "0njd6p2xc5h8cqwsp0j5dq7010h06l50ak9yjs04425xjfck6axb"
+    }
+  },
+  "version": 5
+}

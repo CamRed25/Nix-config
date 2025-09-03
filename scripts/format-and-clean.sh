@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # Updated config path
-NIX_CONFIG_PATH="/home/cam/nix"
+NIX_CONFIG_PATH="/home/cam/Nix-config"
 
 echo "Running deadnix..."
 deadnix -e -q -l -L -_ -h "${NIX_CONFIG_PATH}" || true

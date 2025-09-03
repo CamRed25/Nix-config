@@ -4,16 +4,16 @@ cd "$(dirname "$0")"
 
 echo "Updating pins with npins..."
 # Run npins update and upgrade before rebuild
-npins update
-npins upgrade
+cd ../ && npins update && npins upgrade
+
 
 echo "Evaluating nixpkgs pin..."
 nixpkgs_pin=$(nix eval --raw -f ../npins/default.nix nixpkgs)
 
-#echo "Evaluating home-manager pin..."
-#home_manager_pin=$(nix eval --raw -f npins/default.nix home-manager)
+echo "Evaluating home-manager pin..."
+home_manager_pin=$(nix eval --raw -f ../npins/default.nix home-manager)
 
-nix_path="nixpkgs=${nixpkgs_pin}:home-manager=${home_manager_pin}:nixos-config=/home/cam/nix/configuration.nix"
+nix_path="nixpkgs=${nixpkgs_pin}:home-manager=${home_manager_pin}:nixos-config=/home/cam/Nix-config/configuration.nix"
 
 echo "Rebuilding NixOS..."
 sudo env NIX_PATH="${nix_path}" nixos-rebuild --no-reexec "${1:-switch}" "$@"

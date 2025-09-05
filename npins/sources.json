@@ -36,6 +36,18 @@
       "url": null,
       "hash": "1wc8y3diczlqjcn2ganr8v75sbfx2c8rl6qjhavmdw9aa3lma2gy"
     },
+    "nixos-hardware": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/NixOS/nixos-hardware.git"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "ba6fab29768007e9f2657014a6e134637100c57d",
+      "url": null,
+      "hash": "19sdz85g8mqldkznbh8krxgrwa42wz712hw2pva4g2jsx22zjili"
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",

@@ -1,17 +1,5 @@
 {
   "pins": {
-    "NUR": {
-      "type": "Git",
-      "repository": {
-        "type": "Git",
-        "url": "https://github.com/nix-community/NUR.git"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "bffccde9bd7869ab355b76d53fbc25ac1f7d37eb",
-      "url": null,
-      "hash": "0zz5d55751p33qc1v45abb8hvdjyhkc0hqhr0k0l03f2zcx29gnq"
-    },
     "home-manager": {
       "type": "Git",
       "repository": {
@@ -65,6 +53,18 @@
       "revision": "e4683671e145c652c371b6b8ad9b0d757c88853c",
       "url": null,
       "hash": "19irh8bmsphs1ia4dd1fza0hzdl6g7pga2fd2i2fv4v8bjrkmvrn"
+    },
+    "nur-combined": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/nix-community/nur-combined.git"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "269b3b7a7ce42320990fa691c14d03019e901cb1",
+      "url": null,
+      "hash": "0a8r1m4d06vgf3d4sm351xdfynaw0z2bfbnh3d634x5pw45nrsdn"
     },
     "nyx": {
       "type": "Git",

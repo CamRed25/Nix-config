@@ -1,5 +1,8 @@
 # gaming.nix
-{pkgs, ...}: {
+{pkgs, ...}: let
+  pins = import ../npins;
+  nur = import pins.nur-combined {inherit pkgs;};
+in {
   programs = {
     steam = {
       enable = true;
@@ -65,5 +68,6 @@
     lutris
     dxvk
     mesa
+    nur.repos.ataraxiasjel.gamma-launcher
   ];
 }

@@ -4,7 +4,11 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  # Import npins for hardware-specific packages
+  pins = import ../npins;
+  npins = import pins.npins {inherit pkgs;};
+in {
   programs = {
     direnv.enable = true;
     starship.enable = true;

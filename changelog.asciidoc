@@ -1,0 +1,65 @@
+= Changelog
+
+== 0.4.0
+*README.md*
+- Expanded the main README with a new section linking to documentation files in each major folder. Added more detailed explanations for each section, including directory structure, usage notes, and documentation practices.
+- Added notes clarifying that 0.1.0 updates revolve around updating npins, and that most of the npins section can be removed or customized, with future comments to indicate which parts are essential.
+
+*modules/*
+- Updated `Modules.md` to include `gaming.nix` in the list of available modules, with a clearer description of its purpose and contents.
+- Improved formatting and consistency across module documentation.
+
+*de/*
+- Further refined `DesktopEnviroments.md` for clarity, ensuring section order and formatting are consistent and easy to follow.
+
+*hosts/*
+- Reformatted `Hosts.md` for improved readability and consistency. Enhanced the "Hosts" section with clearer descriptions and formatting.
+
+*npins/*
+- Cleaned up `Npins.md` for better structure and clarity. Updated the list of pins and future plans, and improved the formatting of pin descriptions.
+
+*changelog.asciidoc*
+- Added more detailed explanations to each changelog entry, providing context and rationale for changes across the project.
+
+== 0.3.0
+*modules/*
+- Added `gaming.nix`, which introduces configurations and optimizations for gaming on NixOS. This includes setup for Steam, Mindustry, BAR, and other games, aiming to streamline the gaming experience across hosts.
+- Improved documentation and formatting in `Modules.md` to provide clearer descriptions of each module, their intended use, and future plans for modularization.
+
+*de/*
+- Cleaned up and reformatted `DesktopEnviroments.md` for better readability. Clarified which desktop environments are currently configured, and provided more guidance on usage and documentation plans.
+
+*hosts/*
+- Updated and clarified host descriptions in `Hosts.md`. Each host entry now includes more context about the machine, its intended use, and any relevant notes about its configuration or future plans.
+
+*npins/*
+- Improved formatting in `Npins.md` for consistency and readability. Added a "Future Pins" section to document plans for evaluating alternative user environment and deployment tools, with links to relevant projects.
+
+== 0.2.0
+*npins/sources.json*
+- Updated pins (sources.json), incremented version to 0.2.0. This update refreshed the commit hashes and versions for all tracked repositories, ensuring reproducibility and up-to-date sources.
+- Added or updated pins for NUR, home-manager, nix-index-database, nixos-hardware, nixpkgs, npins, and nyx, reflecting the latest upstream changes.
+
+*modules/*
+- Added `security.nix`, which centralizes firewall and security-related settings for easier reuse across hosts.
+- Added `nvidia.nix`, providing a dedicated module for NVIDIA driver installation and configuration, including options for driver version and related tweaks.
+
+*hosts/*
+- Enhanced `Hosts.md` with more detailed descriptions for each host, including their hardware roles and any special configuration notes.
+
+== 0.1.0
+*npins/sources.json*
+- Initial pin setup for NUR, home-manager, nix-index-database, nixos-hardware, nixpkgs, npins, and nyx. This established the foundation for reproducible builds by locking dependencies to specific versions.
+
+*modules/*
+- Added initial modules: `common.nix` (shared settings like networking and browsers), `dev.nix` (CLI and development tools), `localization.nix` (locale and keyboard settings), and `nix.nix` (Nix package manager configuration).
+
+*de/*
+- Added the first version of `DesktopEnviroments.md` to document available desktop environment configurations. Included initial setup for KDE Plasma.
+
+*hosts/*
+- Created initial host configuration files: `Earth.nix` (Surface tablet), `Mercury.nix` (SteamDeck), `Moon.nix` (main laptop), and `Star.nix` (desktop PC).
+- Added `Hosts.md` as a folder README to explain the purpose and usage of host-specific configurations.
+
+*project*
+- Set up `.vscode/settings.json` to enable Nix language server support and Markdown validation, improving the development experience in VS Code.

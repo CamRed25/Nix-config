@@ -15,6 +15,7 @@ This folder contains reusable NixOS modules. Each `.nix` file provides a specifi
 
 - **common.nix**: Common configurations shared across multiple hosts (networking, browsers, email, etc.).
 - **dev.nix**: CLI tools and other development-related utilities.
+- **gaming.nix**: Game-related configurations and optimizations, including Steam, Mindustry, BAR, and a few others.
 - **localization.nix**: Locale, timezone, keyboard layout, and related settings.
 - **nix.nix**: Nix settings, garbage collection, and related configurations.
 - **nvidia.nix**: NVIDIA drivers and related settings.

@@ -29,11 +29,13 @@ This repository contains my personal NixOS configuration setup. As this is my *f
 
 ## Notes
 
-- **X11 vs Wayland:** I currently use X11 daily because Wayland with NVIDIA results in low FPS for gaming, while X11 performs normally. I plan to revisit Wayland as support improves.
-- **Secrets Management:** My `configuration.nix` currently contains some sensitive commands. I plan to use [agenix](https://github.com/ryantm/agenix) or [sops](https://github.com/Mic92/sops-nix) for secret management once I learn more about them.
-- **Documentation:** Each major folder contains a `.md` file with more details. Refer to those for specifics on hosts, modules, desktop environments, and pins.
-- **Changelog Versioning:** 0.1.0 updates will revolve around the updating of npins (pin sources and versions).
-- **npins Customization:** Most of the npins section can be removed if you wish to simplify or customize your own setup. In the future, I will comment on which parts are essential and which can be safely removed or changed according to your own vision.
+- **X11 vs Wayland:** Currently using X11 daily due to better NVIDIA gaming performance. Will revisit Wayland as support improves.
+- **Secrets Management:** Sensitive commands are present in `configuration.nix`. Planning to use [agenix](https://github.com/ryantm/agenix) or [sops](https://github.com/Mic92/sops-nix) for secrets in the future.
+- **Documentation:** Each major folder has a `.md` file with more details. Refer to those for specifics on hosts, modules, DEs, and pins.
+- **Changelog Versioning:** 0.1.0 updates focus on npins (pin sources and versions).
+- **npins Customization:** Most of the npins section can be removed or customized. Future comments will clarify which parts are essential.
+- **Note:** `./modules/home` and `./de/homede` are not in use currently, but may be in the future.
+- **.gitignore:** `flake.nix` and `flake.lock` are included because I use npins to manage external dependencies, leveraging its "npins import-flake" feature.
 
 ---
 
@@ -59,4 +61,4 @@ Feel free to clone, inspect, and adapt this configuration for your own needs. Ea
 
 *Cheers,*
 
-*A fellow NixOS explorer*
+A fellow NixOS explorer

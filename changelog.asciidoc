@@ -1,5 +1,27 @@
 = Changelog
 
+== 0.5.0
+*npins/sources.json*
+- Updated pins (sources.json), incremented version to 0.5.0. This update refreshed the commit hashes and versions for all tracked repositories, ensuring reproducibility and up-to-date sources.
+- Added or updated pins for MangoWC, Scenefx, Stylix, and mmsg, reflecting the latest upstream changes.
+
+*de/mangowc.nix*
+- Refactored and debugged the mangowc module integration. Ensured correct usage of pins, added proper argument sets, and constructed the required packages attribute for mango and its dependencies. Addressed multiple errors related to missing attributes, incorrect imports, and module structure.
+- Added logic to build the mango package with the required mmsg pin, and improved error handling for missing or null packages.
+- Cleaned up unused attributes and removed invalid flake-style inputs from the module.
+
+*configuration.nix*
+- Fixed Home Manager integration by correcting the import and usage of the home-manager pin. Ensured the home-manager.users.cam attribute is set correctly and not imported as a list.
+- Improved let/in block structure and clarified pin usage for better maintainability.
+
+*modules/home/home.nix*
+- Fixed module structure by removing extraneous attribute sets and ensuring a valid NixOS module is returned.
+- Added the required home.stateVersion option for Home Manager compatibility.
+
+*General*
+- Improved error handling and module argument sets across the configuration, ensuring all modules conform to NixOS standards and best practices.
+- Cleaned up unused bindings and improved documentation in code comments where relevant.
+
 == 0.4.0
 *README.md*
 - Expanded the main README with a new section linking to documentation files in each major folder. Added more detailed explanations for each section, including directory structure, usage notes, and documentation practices.

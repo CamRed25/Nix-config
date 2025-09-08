@@ -53,9 +53,9 @@ in {
     nix-health
     npins
     nil
+    nh
     # editors & terminals
     vscode
-    ghostty
     xdg-ninja
     # dev libraries/tools
     vulkan-tools

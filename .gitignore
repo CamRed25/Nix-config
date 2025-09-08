@@ -1,3 +1,5 @@
 configuration.nix
 hardware-configuration.nix
 .vscode/
+flake.nix
+flake.lock

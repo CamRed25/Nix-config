@@ -3,10 +3,6 @@ _: {
     optimise.automatic = true;
     settings = {
       auto-optimise-store = true;
-      keep-going = false; # maybe not yet.
-      sandbox = true;
-      use-cgroups = true;
-      max-jobs = "auto";
       allowed-users = [
         "root"
         "cam"

@@ -1,5 +1,18 @@
 {
   "pins": {
+    "flake-parts": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "hercules-ci",
+        "repo": "flake-parts"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "4524271976b625a4a605beefd893f270620fd751",
+      "url": "https://github.com/hercules-ci/flake-parts/archive/4524271976b625a4a605beefd893f270620fd751.tar.gz",
+      "hash": "sha256-+uWLQZccFHwqpGqr2Yt5VsW/PbeJVTn9Dk6SHWhNRPw="
+    },
     "home-manager": {
       "type": "Git",
       "repository": {
@@ -8,9 +21,46 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "f56bf065f9abedc7bc15e1f2454aa5c8edabaacf",
+      "revision": "f35703b412c67b48e97beb6e27a6ab96a084cd37",
       "url": null,
-      "hash": "0r6skg17si9x8spfkcp9jafvrxjlwmh1pli7hyzgjwkdbqd4rqvb"
+      "hash": "sha256-WK7tOhWwr15mipcckhDg2no/eSpM1nIh4C9le8HgHhk="
+    },
+    "ignis": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/ignis-sh/ignis.git"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "f09be7e34aadf83f019bfc9059507caea049d30b",
+      "url": null,
+      "hash": "sha256-VRrwsrpj4htZvwu1TYoLbsahcPOkombZZSqs2NnYMnM="
+    },
+    "mangowc": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/DreamMaoMao/mangowc.git"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "5f3632dde4a1217ffd4fcef9e33ab88385344c60",
+      "url": null,
+      "hash": "sha256-YRatyKW08TXQ6azHUbZBF1DNbLG0axvbtqPLCUWOD1s="
+    },
+    "mmsg": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "DreamMaoMao",
+        "repo": "mmsg"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "329eddd374ac84fdc211d1933fd137be39c80bb8",
+      "url": "https://github.com/DreamMaoMao/mmsg/archive/329eddd374ac84fdc211d1933fd137be39c80bb8.tar.gz",
+      "hash": "sha256-vrV65eyHKhY1RdIG/c8QIwo7rDrxLYIg+S1GVa3xN9Y="
     },
     "nix-index-database": {
       "type": "Git",
@@ -20,9 +70,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "3fe768e1f058961095b4a0d7a2ba15dc9736bdc6",
+      "revision": "9b144dc3ef6e42b888c4190e02746aab13b0e97f",
       "url": null,
-      "hash": "1wc8y3diczlqjcn2ganr8v75sbfx2c8rl6qjhavmdw9aa3lma2gy"
+      "hash": "sha256-IwOwN70HvoBNB2ckaROxcaCvj5NudNc52taPsv5wtLk="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -34,13 +84,13 @@
       "submodules": false,
       "revision": "11b2a10c7be726321bb854403fdeec391e798bf0",
       "url": null,
-      "hash": "0saswrdg59v4xfwfl7q61b47davz6yf58xfj707wzcip3s5zpm1y"
+      "hash": "sha256-PtT7ix43ss8PONJ1VJw3f6t2yAoGH+q462Sn8lrmWmk="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre855922.c6a788f552b7/nixexprs.tar.xz",
-      "hash": "0p9aa19hw2xlr5d951yr7z6gdbwqmnff2m2pj5bysirnr8fq1apn"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre856744.ca7729638096/nixexprs.tar.xz",
+      "hash": "sha256-PEuQKa11BPUDAEoMH4NDp7RsifVlhT+mPE0D7czYP7w="
     },
     "npins": {
       "type": "Git",
@@ -52,7 +102,7 @@
       "submodules": false,
       "revision": "e4683671e145c652c371b6b8ad9b0d757c88853c",
       "url": null,
-      "hash": "19irh8bmsphs1ia4dd1fza0hzdl6g7pga2fd2i2fv4v8bjrkmvrn"
+      "hash": "sha256-Nu86s1xok+1EFM0J9e55hrYPgfoutEZUDBpeXReCOaY="
     },
     "nur-combined": {
       "type": "Git",
@@ -62,9 +112,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8166a096a324fae756f3113d3405902e5838b977",
+      "revision": "837869dd26d922d5be47335bb9bfade861eabe4e",
       "url": null,
-      "hash": "1i364v0rhnm5f4znzwih8jcwhfby8p1j621khn0dc70d2fvzjlsw"
+      "hash": "sha256-7ognyA+DQghOs8hy50rVCkscvcAOme638UO9kSb7onA="
     },
     "nyx": {
       "type": "Git",
@@ -74,10 +124,35 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e347ef625cf40c90592e419521b0d5127272a045",
+      "revision": "24ee0dd25528c809250782f456ad39585b773d44",
       "url": null,
-      "hash": "09kb3zlr8bkg2ll0kc1gw0nlsxr9l8l28f1nxnmvp1cq7jxgx1ib"
+      "hash": "sha256-MuC7l4ZH5ItxEmbZ+9iYZBjsAad0JCBPh0PICb+zpsY="
+    },
+    "scenefx": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "wlrfx",
+        "repo": "scenefx"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "0466cac4be1333d0794b01f4726780be23535767",
+      "url": "https://github.com/wlrfx/scenefx/archive/0466cac4be1333d0794b01f4726780be23535767.tar.gz",
+      "hash": "sha256-lG0slYwUti3ylxVb27YhlWun+EDTNXb8a4v4JHC22OA="
+    },
+    "stylix": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/nix-community/stylix.git"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "9991299fe9aad330fb6b96bb58def37033271177",
+      "url": null,
+      "hash": "sha256-VOn/s24rb+iO6auhmGfT5kyr0ixRK6weBsNCKkGo2yY="
     }
   },
-  "version": 5
+  "version": 6
 }

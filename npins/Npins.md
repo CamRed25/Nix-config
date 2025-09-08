@@ -14,6 +14,12 @@ Each pin refers to a specific version of a repository or channel, allowing for r
 - **nixpkgs** — [NixOS/nixpkgs (Unstable)](https://github.com/NixOS/nixpkgs)
 - **npins** — [npins](https://github.com/nix-community/npins)
 - **nyx** — [nyx](https://github.com/chaotic-cx/nyx)
+- **flake-parts** — [flake-parts](https://github.com/hercules-ci/flake-parts)
+- **ignis** — [ignis](https://github.com/ignis-sh/ignis)
+- **mangowc** — [mangowc](https://github.com/DreamMaoMao/mangowc)
+- **mmsg** — [mmsg](https://github.com/DreamMaoMao/mmsg)
+- **scenefx** — [scenefx](https://github.com/wlrfx/scenefx)
+- **stylix** — [stylix](https://github.com/nix-community/stylix)
 
 ---
 

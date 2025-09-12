@@ -1,17 +1,28 @@
 {
   "pins": {
-    "flake-parts": {
+    "Nilla-CLI": {
       "type": "Git",
       "repository": {
-        "type": "GitHub",
-        "owner": "hercules-ci",
-        "repo": "flake-parts"
+        "type": "Git",
+        "url": "https://github.com/nilla-nix/cli.git"
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4524271976b625a4a605beefd893f270620fd751",
-      "url": "https://github.com/hercules-ci/flake-parts/archive/4524271976b625a4a605beefd893f270620fd751.tar.gz",
-      "hash": "sha256-+uWLQZccFHwqpGqr2Yt5VsW/PbeJVTn9Dk6SHWhNRPw="
+      "revision": "6c6c42eaae3d095de6d1b47396c8b74ea57cb442",
+      "url": null,
+      "hash": "sha256-0+d6LZfofBG+4OxnZcFaNg2ycgj1zcOJQUcPL1TEaSc="
+    },
+    "Rofi-Configs": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/adi1090x/rofi.git"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "093c1a79f58daab358199c4246de50357e5bf462",
+      "url": null,
+      "hash": "sha256-iUX0Quae06tGd7gDgXZo1B3KYgPHU+ADPBrowHlv02A="
     },
     "home-manager": {
       "type": "Git",
@@ -21,46 +32,33 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "f35703b412c67b48e97beb6e27a6ab96a084cd37",
+      "revision": "6d7c11a0adee0db21e3a8ef90ae07bb89bc20b8f",
       "url": null,
-      "hash": "sha256-WK7tOhWwr15mipcckhDg2no/eSpM1nIh4C9le8HgHhk="
+      "hash": "sha256-5PWVrdMp8u31Q247jqnJcwxKg3MJrs1TadTyTBRVBDY="
     },
-    "ignis": {
+    "nilla": {
       "type": "Git",
       "repository": {
         "type": "Git",
-        "url": "https://github.com/ignis-sh/ignis.git"
+        "url": "https://github.com/nilla-nix/nilla.git"
       },
       "branch": "main",
       "submodules": false,
-      "revision": "f09be7e34aadf83f019bfc9059507caea049d30b",
+      "revision": "2e98ae315a592ad6b6de44670514c048dcc88dc7",
       "url": null,
-      "hash": "sha256-VRrwsrpj4htZvwu1TYoLbsahcPOkombZZSqs2NnYMnM="
+      "hash": "sha256-15lwhWcMonJH6UholMMHDc+p2BoSpGA4AYGrsXQA9Do="
     },
-    "mangowc": {
+    "nilla-utils": {
       "type": "Git",
       "repository": {
         "type": "Git",
-        "url": "https://github.com/DreamMaoMao/mangowc.git"
+        "url": "https://github.com/arnarg/nilla-utils.git"
       },
       "branch": "main",
       "submodules": false,
-      "revision": "5f3632dde4a1217ffd4fcef9e33ab88385344c60",
+      "revision": "fae2efd2db9714e438864b7881b0b27888e9c07e",
       "url": null,
-      "hash": "sha256-YRatyKW08TXQ6azHUbZBF1DNbLG0axvbtqPLCUWOD1s="
-    },
-    "mmsg": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "DreamMaoMao",
-        "repo": "mmsg"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "329eddd374ac84fdc211d1933fd137be39c80bb8",
-      "url": "https://github.com/DreamMaoMao/mmsg/archive/329eddd374ac84fdc211d1933fd137be39c80bb8.tar.gz",
-      "hash": "sha256-vrV65eyHKhY1RdIG/c8QIwo7rDrxLYIg+S1GVa3xN9Y="
+      "hash": "sha256-R9L5H8K8kvjOhsYJyOoyLSaaBFcsN6x1bUJW0qpFfyk="
     },
     "nix-index-database": {
       "type": "Git",
@@ -112,9 +110,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "837869dd26d922d5be47335bb9bfade861eabe4e",
+      "revision": "bdf2534e76909202edd1dd9664fed5e062551b68",
       "url": null,
-      "hash": "sha256-7ognyA+DQghOs8hy50rVCkscvcAOme638UO9kSb7onA="
+      "hash": "sha256-AMTVKr5mDXKiIZuKZZu4CTVaKXGJ35ADtwOfK/sHT/8="
     },
     "nyx": {
       "type": "Git",
@@ -124,22 +122,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "24ee0dd25528c809250782f456ad39585b773d44",
+      "revision": "0670f754b6c6704568b0568adc7cd86b68716f9f",
       "url": null,
-      "hash": "sha256-MuC7l4ZH5ItxEmbZ+9iYZBjsAad0JCBPh0PICb+zpsY="
-    },
-    "scenefx": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "wlrfx",
-        "repo": "scenefx"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "0466cac4be1333d0794b01f4726780be23535767",
-      "url": "https://github.com/wlrfx/scenefx/archive/0466cac4be1333d0794b01f4726780be23535767.tar.gz",
-      "hash": "sha256-lG0slYwUti3ylxVb27YhlWun+EDTNXb8a4v4JHC22OA="
+      "hash": "sha256-RxxDZ4vuWNXYMHUKSi4Y6C5Y+xCVh04K4jyTir1Yytc="
     },
     "stylix": {
       "type": "Git",
@@ -149,9 +134,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "9991299fe9aad330fb6b96bb58def37033271177",
+      "revision": "834a743c11d66ea18e8c54872fbcc72ce48bc57f",
       "url": null,
-      "hash": "sha256-VOn/s24rb+iO6auhmGfT5kyr0ixRK6weBsNCKkGo2yY="
+      "hash": "sha256-VwzdFEQCpYMU9mc7BSQGQe5wA1MuTYPJnRc9TQCTMcM="
     }
   },
   "version": 6

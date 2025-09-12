@@ -1,5 +1,33 @@
 = Changelog
+== 0.5.2
+*de/DesktopEnviroments.md*
+- Updated documentation to clarify MangoWC naming, folder structure, and the placeholder status of homede/.
+- Removed all references to MangoWC and home-manager from documentation.
 
+*de/homede/mangowc.nix*
+- Fixed and cleaned up the module structure, ensuring correct import paths and attribute usage.
+- Reformatted for consistent indentation and readability.
+- Improved settings and autostart script for MangoWC.
+- Removed mangowc.nix due to insufficient documentation on installation.
+
+*npins/Npins.md*
+- Removed mangowc, home-manager, ignis, and scenefx from the list of current pins and documentation.
+
+*General*
+- Improved formatting and consistency in documentation and code across the configuration.
+- Removed home-manager as it was overall unneeded.
+
+== 0.5.1
+*npins/sources.json*
+- removed flake-parts pin, as it is not used anywhere in the config.
+
+*DesktopEnviroments.md*
+- Updated documentation to reflect the correct name "MangoWC" instead of "MangoWM".
+- Clarified that the "homede/" folder is a placeholder for future home-manager desktop environment configurations and is not yet configured.
+- Removed references to "Gnome" as it is not currently configured.
+
+*mangowc.nix*
+-changed walker to rofi in the mangowc module, as rofi is more feature-rich and better supported.
 == 0.5.0
 *npins/sources.json*
 - Updated pins (sources.json), incremented version to 0.5.0. This update refreshed the commit hashes and versions for all tracked repositories, ensuring reproducibility and up-to-date sources.

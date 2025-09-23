@@ -4,25 +4,28 @@ This folder contains reusable NixOS modules. Each `.nix` file provides a specifi
 
 ## Purpose
 
-- Centralize and document custom NixOS modules.
-- Modules here are cherry-picked for use in my hosts. I plan to add more modules as needed and may refactor or split large modules for better usability.
+Centralize and document custom NixOS modules. Modules here are cherry-picked for use in my hosts. I plan to add more modules as needed and may refactor or split large modules for better usability.
 
 ## Usage
 
-- Each module is labeled for my own reference. Documentation may be limited, but I will try to improve it over time.
+Each module is labeled for my own reference. Documentation may be limited, but I will try to improve it over time.
 
 ## Available Modules
 
-- **cleaning.nix**: System cleaning utilities including xdg-ninja and bleachbit.
-- **common.nix**: Common configurations shared across multiple hosts (networking, browsers, email, etc.).
-- **dev.nix**: CLI tools and other development-related utilities.
-- **gaming.nix**: Game-related configurations and optimizations, including Steam, Mindustry, BAR, and a few others.
-- **localization.nix**: Locale, timezone, keyboard layout, and related settings.
-- **nix.nix**: Nix settings, garbage collection, and related configurations.
-- **nvidia.nix**: NVIDIA drivers and related settings.
-- **security.nix**: Security settings, firewall, and related configurations.
+| Module             | Description                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------------|
+| `cleaning.nix`     | System cleaning utilities including xdg-ninja and bleachbit.                                  |
+| `common.nix`       | Common configurations shared across multiple hosts (networking, browsers, email, etc.).       |
+| `dev.nix`          | CLI tools and other development-related utilities.                                            |
+| `gaming.nix`       | Game-related configurations and optimizations, including Steam, Mindustry, BAR, and others.   |
+| `localization.nix` | Locale, timezone, keyboard layout, and related settings.                                      |
+| `nix.nix`          | Nix settings, garbage collection, and related configurations.                                 |
+| `nvidia.nix`       | NVIDIA drivers and related settings.                                                          |
+| `security.nix`     | Security settings, firewall, and related configurations.                                      |
 
 ## Future Modules
 
-- **minecraft.nix**: Minecraft server and related settings.
-- etc.
+Planned modules may include:
+
+- `minecraft.nix`: Minecraft server and related settings.
+- Others as needed.

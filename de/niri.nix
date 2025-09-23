@@ -6,6 +6,12 @@ in {
   programs.niri = {
     enable = true;
   };
+  programs = {
+    waybar = {
+      systemd.target = "graphical-session.target";
+      enable = true;
+    };
+  };
 
   xdg.portal = {
     enable = true;

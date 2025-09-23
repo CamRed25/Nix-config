@@ -25,6 +25,22 @@
 - Added niri-tag to the list of current pins in documentation.
 - Updated formatting and organization of current pins list.
 
+*README.md*
+- Expanded Directory Structure & Documentation: Now lists all major folders and their documentation files.
+- Added Changelog section referencing changelog.asciidoc for versioned history.
+- Added Roadmap (Short-term) section outlining immediate goals (secrets migration, deployment tooling, security hardening, etc).
+- Added Configuration Notes with collapsible details for Display & Graphics, Security & Secrets, Package Management, and Development Status.
+- Updated Development Status to clarify which modules and desktop environments are in use, deprecated, or removed.
+- Improved contribution guidelines and Getting Started instructions for new users.
+
+*de/DesktopEnviroments.md*
+- Updated documentation to clarify the status of each desktop environment.
+- Added a section for former/experimental desktop environments.
+- Marked lxqtniri.nix as deprecated and moved to a "graveyard" section.
+
+*pkgs/pkgs.md*
+- Added documentation for the pkgs/ folder, clarifying its experimental nature and listing included projects (niri-companion, niri-switch, niri-tag).
+
 *.gitignore*
 - Added .gitignore file to exclude configuration.nix, hardware-configuration.nix, and Dot/ symbolic link directory from version control.
 

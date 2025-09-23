@@ -7,18 +7,20 @@ Each pin refers to a specific version of a repository or channel, allowing for r
 
 ## Current Pins
 
-- **nix-index-database** — [nix-index-database](https://github.com/nix-community/nix-index-database)
-- **nixos-hardware** — [nixos-hardware](https://github.com/NixOS/nixos-hardware)
-- **nixpkgs** — [NixOS/nixpkgs (Unstable)](https://github.com/NixOS/nixpkgs)
-- **npins** — [npins](https://github.com/andir/npins)
-- **nyx** — [nyx](https://github.com/chaotic-cx/nyx)
-- **stylix** — [stylix](https://github.com/nix-community/stylix)
-- **Nilla-CLI** — [Nilla CLI](https://github.com/nilla-nix/cli)
-- **home-manager** — [home-manager](https://github.com/nix-community/home-manager)
-- **nilla** — [nilla](https://github.com/nilla-nix/nilla)
-- **nilla-utils** — [nilla-utils](https://github.com/arnarg/nilla-utils)
-- **nur-combined** — [nur-combined](https://github.com/nix-community/nur-combined)
-- **niri-companion** — [niri-companion](https://github.com/dybdeskarphet/niri-companion)
+| Pin | Source | Notes |
+|-----|--------|-------|
+| nix-index-database | https://github.com/nix-community/nix-index-database | nix-locate DB |
+| nixos-hardware | https://github.com/NixOS/nixos-hardware | HW profiles |
+| nixpkgs (unstable) | https://github.com/NixOS/nixpkgs | Main package set |
+| npins | https://github.com/andir/npins | Pin manager |
+| nyx | https://github.com/chaotic-cx/nyx | Extra packages |
+| stylix | https://github.com/nix-community/stylix | Theming (future use) |
+| Nilla-CLI | https://github.com/nilla-nix/cli | Deployment tooling |
+| home-manager | https://github.com/nix-community/home-manager | May replace later |
+| nilla | https://github.com/nilla-nix/nilla | Deployment core |
+| nilla-utils | https://github.com/arnarg/nilla-utils | Helpers |
+| nur-combined | https://github.com/nix-community/nur-combined | Community overlay |
+| niri-companion | https://github.com/dybdeskarphet/niri-companion | Wayland helper |
 
 ---
 

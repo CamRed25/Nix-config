@@ -1,5 +1,3 @@
 configuration.nix
 hardware-configuration.nix
-.vscode/
-flake.nix
-flake.lock
+Dot/ #symbolic link sources to help me move things around and configure it in nix. (slightly hacky i would say.)

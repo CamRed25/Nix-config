@@ -59,11 +59,11 @@ in {
     beyond-all-reason
     mindustry
     prismlauncher
-    # limo
+    # limo #cant be built due to loot api changing.
     starsector
     heroic
     mangohud
-    modrinth-app
+    #modrinth-app-unwrapped #never worked for me x11 or wayland.
     discord
     lutris
     dxvk

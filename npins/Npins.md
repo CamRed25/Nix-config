@@ -7,13 +7,18 @@ Each pin refers to a specific version of a repository or channel, allowing for r
 
 ## Current Pins
 
-- **NUR** — [Nix User Repository](https://github.com/nix-community/NUR)
-- **nix-index-database** — [nix-index-database](https://github.com/Mic92/nix-index-database)
+- **nix-index-database** — [nix-index-database](https://github.com/nix-community/nix-index-database)
 - **nixos-hardware** — [nixos-hardware](https://github.com/NixOS/nixos-hardware)
 - **nixpkgs** — [NixOS/nixpkgs (Unstable)](https://github.com/NixOS/nixpkgs)
-- **npins** — [npins](https://github.com/nix-community/npins)
+- **npins** — [npins](https://github.com/andir/npins)
 - **nyx** — [nyx](https://github.com/chaotic-cx/nyx)
 - **stylix** — [stylix](https://github.com/nix-community/stylix)
+- **Nilla-CLI** — [Nilla CLI](https://github.com/nilla-nix/cli)
+- **home-manager** — [home-manager](https://github.com/nix-community/home-manager)
+- **nilla** — [nilla](https://github.com/nilla-nix/nilla)
+- **nilla-utils** — [nilla-utils](https://github.com/arnarg/nilla-utils)
+- **nur-combined** — [nur-combined](https://github.com/nix-community/nur-combined)
+- **niri-companion** — [niri-companion](https://github.com/dybdeskarphet/niri-companion)
 
 ---
 

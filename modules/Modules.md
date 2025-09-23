@@ -13,6 +13,7 @@ This folder contains reusable NixOS modules. Each `.nix` file provides a specifi
 
 ## Available Modules
 
+- **cleaning.nix**: System cleaning utilities including xdg-ninja and bleachbit.
 - **common.nix**: Common configurations shared across multiple hosts (networking, browsers, email, etc.).
 - **dev.nix**: CLI tools and other development-related utilities.
 - **gaming.nix**: Game-related configurations and optimizations, including Steam, Mindustry, BAR, and a few others.
@@ -23,6 +24,5 @@ This folder contains reusable NixOS modules. Each `.nix` file provides a specifi
 
 ## Future Modules
 
-- **cli.nix**: CLI tools and settings.
 - **minecraft.nix**: Minecraft server and related settings.
 - etc.

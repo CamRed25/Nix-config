@@ -1,0 +1,28 @@
+{
+  "markdown.validate.enabled": true,
+  "nix.enableLanguageServer": true, // Enable LSP.
+  "nix.serverPath": "nil", // The path to the LSP server executable.
+  // Uncomment these to tweak settings.
+  // "nix.serverSettings": {
+  //   "nil": {
+  //     "formatting": { "command": ["nixfmt"] }
+  //   }
+  // },
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "[nix]": {
+    "editor.defaultFormatter": "kamadorueda.alejandra",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "alejandra.program": "alejandra",
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit"
+    }
+  },
+}

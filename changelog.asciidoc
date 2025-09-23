@@ -1,4 +1,38 @@
 = Changelog
+== 0.6.0
+*npins/sources.json*
+- Updated pins (sources.json), incremented version to 0.6.0. This update refreshed the commit hashes and versions for all tracked repositories, ensuring reproducibility and up-to-date sources.
+- Added new pins for nilla ecosystem components: Nilla-CLI, nilla, and nilla-utils for future deployment management.
+- Added niri-companion pin for improved niri compositor experience.
+- Added niri-tag pin for enhanced niri tagging functionality.
+- Updated all existing pins including home-manager, nix-index-database, nixos-hardware, nixpkgs, npins, nur-combined, nyx, and stylix to their latest versions.
+
+*de/niri.nix*
+- Added new niri desktop environment configuration providing a complete Wayland compositor setup.
+- Integrated niri-companion and niri-taskbar from NUR for enhanced window management.
+- Configured XDG portals for proper desktop integration with wlroots protocols.
+- Added comprehensive application suite including ghostty terminal, fuzzel launcher, mako notifications, and various system utilities.
+- Included screen capture tools (shotman), wallpaper management (swww, swaybg), and session management (swayidle, swaylock).
+
+*modules/cleaning.nix*
+- Added new cleaning module providing system cleaning utilities including xdg-ninja and bleachbit for maintaining system cleanliness.
+
+*modules/Modules.md*
+- Updated documentation to include the new cleaning.nix module in the Available Modules section.
+- Cleaned up Future Modules section to reflect current project state.
+
+*npins/Npins.md*
+- Added niri-tag to the list of current pins in documentation.
+- Updated formatting and organization of current pins list.
+
+*.gitignore*
+- Added .gitignore file to exclude configuration.nix, hardware-configuration.nix, and Dot/ symbolic link directory from version control.
+
+*General*
+- Improved documentation consistency and accuracy across module descriptions.
+- Enhanced pin management with additional deployment and utility tools for future use.
+- Added comprehensive niri desktop environment as an alternative to existing desktop configurations.
+
 == 0.5.2
 *de/DesktopEnviroments.md*
 - Updated documentation to clarify MangoWC naming, folder structure, and the placeholder status of homede/.

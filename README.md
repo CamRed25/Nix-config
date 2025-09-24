@@ -40,6 +40,14 @@ This repository contains my personal NixOS configuration setup. As this is my *f
 
 See [changelog.asciidoc](changelog.asciidoc) for full versioned history (additions: niri environment, cleaning module, expanded pins, companion tooling, taskbar, deployment prep).
 
+---
+
+## 🐞 Current Issues
+
+See [CurrentIssues.md](CurrentIssues.md) for the latest tracked issues and desktop environment troubleshooting.
+
+---
+
 ## 🚀 Roadmap (Short-term)
 
 - [ ] Migrate secrets to agenix or sops-nix

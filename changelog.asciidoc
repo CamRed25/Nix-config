@@ -32,6 +32,10 @@
 - Added Configuration Notes with collapsible details for Display & Graphics, Security & Secrets, Package Management, and Development Status.
 - Updated Development Status to clarify which modules and desktop environments are in use, deprecated, or removed.
 - Improved contribution guidelines and Getting Started instructions for new users.
+- Added reference to new CurrentIssues.md file for tracking desktop environment and configuration issues.
+
+*CurrentIssues.md*
+- Created new CurrentIssues.md file to track current desktop environment issues, workarounds, and troubleshooting notes. Linked from the main README.
 
 *de/DesktopEnviroments.md*
 - Updated documentation to clarify the status of each desktop environment.

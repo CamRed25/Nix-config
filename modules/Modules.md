@@ -12,16 +12,20 @@ Each module is labeled for my own reference. Documentation may be limited, but I
 
 ## Available Modules
 
-| Module             | Description                                                                                   |
-|--------------------|-----------------------------------------------------------------------------------------------|
-| `cleaning.nix`     | System cleaning utilities including xdg-ninja and bleachbit.                                  |
-| `common.nix`       | Common configurations shared across multiple hosts (networking, browsers, email, etc.).       |
-| `dev.nix`          | CLI tools and other development-related utilities.                                            |
-| `gaming.nix`       | Game-related configurations and optimizations, including Steam, Mindustry, BAR, and others.   |
-| `localization.nix` | Locale, timezone, keyboard layout, and related settings.                                      |
-| `nix.nix`          | Nix settings, garbage collection, and related configurations.                                 |
-| `nvidia.nix`       | NVIDIA drivers and related settings.                                                          |
-| `security.nix`     | Security settings, firewall, and related configurations.                                      |
+| Module               | Description                                                     | Status    |
+|----------------------|-----------------------------------------------------------------|-----------|
+| `common.nix`         | Basic system essentials, networking, browsers, and file management | ✅ Active |
+| `localization.nix`   | Time zone, time sync, keyboard layout and locale settings      | ✅ Active |
+| `security.nix`       | Firewall, fail2ban, AppArmor, audit system, and security tools | ✅ Active |
+| `nix.nix`            | Nix package manager settings, overlays, and optimizations      | ✅ Active |
+| `gaming.nix`         | Gaming packages, Steam, and gaming optimizations               | ✅ Active |
+| `dev.nix`            | Development tools, CLI utilities, and productivity packages    | ✅ Active |
+| `nvidia.nix`         | NVIDIA drivers and hardware acceleration                       | ✅ Active |
+| `cleaning.nix`       | System maintenance and cleanup utilities                       | ✅ Active |
+| `backup.nix`         | Automated Restic backup system with scheduling and monitoring  | ✅ Active |
+| `fonts.nix`          | System fonts, font packages, and font configuration            | ✅ Active |
+| `multimedia.nix`     | Media codecs, players, audio/video support, and hardware acceleration | ✅ Active |
+| `monitoring.nix`     | System monitoring tools, hardware health checks, and diagnostics | ✅ Active |
 
 ## Future Modules
 

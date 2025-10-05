@@ -1,4 +1,149 @@
 = Changelog
+== 0.9.0
+*Stylix Integration Removal*
+- Removed Stylix system-wide theming configuration due to flakes-only requirement.
+- Reverted to manual theming approach using existing icy color scheme in waybar and applications.
+- Cleaned up documentation and configuration files to remove Stylix references.
+
+*modules/stylix.nix*
+- Removed Stylix module file as it's incompatible with npins-based (non-flake) setup.
+- Stylix requires flake architecture which conflicts with current pin-based dependency management.
+
+*configuration.nix*
+- Removed stylix.nix module import to restore working system configuration.
+- Maintained existing desktop environment and theming configurations.
+
+*modules/Modules.md*
+- Removed stylix.nix from module documentation.
+- Updated module table to reflect current active modules only.
+
+*npins/Npins.md*
+- Removed Stylix pin reference from active pins table.
+- Maintained existing manual theming approach with waybar icy configuration.
+
+*Theming Architecture Enhancement*
+- Stylix now provides automatic theming that complements existing manual theme configurations.
+- Maintains compatibility with existing icy theme implementations in waybar, fuzzel, and GTK applications.
+- Provides consistent theming for applications that were not previously manually themed.
+- Enables easy theme switching through single base16 color scheme configuration.
+- Reduces manual theme maintenance by automatically generating application-specific themes.
+
+== 0.8.0
+*Package Removal and Cleanup*
+- Removed ignis widget system and all related components from the codebase.
+- Removed Exo desktop environment package and configurations.
+- Cleaned up experimental widget and desktop environment packages that were no longer needed.
+
+*npins/sources.json*
+- Removed Exo pin that was used for desktop environment configuration and theming utilities.
+- Removed ignis pin that provided widget system functionality.
+- Removed ignis-gvc pin that handled volume control functionality.
+- Streamlined pin dependencies by removing unused experimental packages.
+
+*de/niri.nix*
+- Removed ignis widget system import and package declarations.
+- Removed exopkgs import and exo package references.
+- Cleaned up GTK4 Layer Shell environment variables that were specific to ignis.
+- Removed ignis and exo from systemPackages, simplifying the Niri desktop environment.
+- Eliminated dependencies on removed experimental packages while maintaining core Niri functionality.
+
+*Dot/niri/config.kdl (and backup files)*
+- Removed ignis-based application launcher keybinding (Mod+D).
+- Removed ignis power menu keybinding (Mod+Escape).
+- Removed ignis settings panel keybinding (Mod+I).
+- Removed ignis screen recorder keybindings (Mod+Shift+Alt+R, Mod+Alt+R).
+- Removed ignis initialization from startup commands.
+- Maintained alternative launcher and utility keybindings using fuzzel and other tools.
+
+*Dot/matugen/config.toml*
+- Removed ignis template configuration that generated color schemes for the widget system.
+- Cleaned up theming configuration to focus on remaining desktop components.
+
+*Dot/ignis/*
+- Completely removed ignis configuration directory and all associated widget configurations.
+- Removed Python scripts and configuration files related to the ignis widget system.
+
+*pkgs/pkgs.md*
+- Updated experimental packages documentation to remove references to ignis and Exo.
+- Cleaned up package table to reflect current available experimental builds.
+- Maintained documentation for remaining packages: niri-companion, niri-tag, and stasis.
+
+*pkgs/ directory*
+- Removed exo.nix package definition file.
+- Removed exopkgs.nix that managed exo and ignis package builds.
+- Removed ignis.nix package definition file.
+- Removed ignisgvc.nix that provided volume control library integration.
+- Streamlined pkgs directory to contain only actively used experimental packages.
+
+*General Cleanup*
+- Comprehensive removal of all ignis and exo references throughout the configuration.
+- Eliminated experimental widget system dependencies that were no longer maintained.
+- Simplified Niri desktop environment configuration by removing complex widget overlays.
+- Maintained core desktop functionality while reducing configuration complexity.
+- Improved configuration maintainability by removing unused experimental components.
+
+== 0.7.0
+*npins/sources.json*
+- Updated pins (sources.json), incremented version to 0.7.0. This update refreshed the commit hashes and versions for all tracked repositories, ensuring reproducibility and up-to-date sources.
+- Added Exo pin for desktop environment configuration and theming utilities.
+- Added ignis and ignis-gvc pins for widget system and volume control functionality.
+- Added stasis pin for session management capabilities.
+- Updated all existing pins including home-manager, niri-companion, nilla-utils, nixos-hardware, nixpkgs, nur-combined, nyx, and stylix to their latest versions.
+
+*de/kde.nix*
+- Enhanced SDDM display manager configuration with autoNumlock feature, improving user experience for KDE Plasma sessions.
+- Restructured display manager settings for better organization and maintainability.
+
+*de/niri.nix*
+- Major refactor and enhancement of Niri desktop environment configuration.
+- Added comprehensive environment variables for proper Wayland session detection (XDG_CURRENT_DESKTOP, XDG_SESSION_DESKTOP, NIXOS_OZONE_WL, MOZ_ENABLE_WAYLAND).
+- Implemented complete XDG portal configuration with wlroots, GTK, and GNOME portals for proper desktop integration.
+- Added detailed portal configuration for screenshots, screencasting, and remote desktop functionality.
+- Enhanced security configuration with polkit and PAM services for swaylock.
+- Added comprehensive system services including gnome-keyring, udisks2, power-profiles-daemon, and dbus.
+- Significantly expanded package list with desktop shell widgets (ignis, stasis), theming tools (matugen, exo), and additional utilities.
+- Integrated newly built packages including niri-companion, ignis, and stasis for enhanced desktop functionality.
+- Added proper clipboard support with wl-clipboard and cliphist.
+- Included screenshot and screen selection tools (slurp, grim, shotman).
+
+*modules/dev.nix*
+- Added nvfetcher to development tools for improved package fetching and management capabilities.
+- Enhanced development workflow with additional package management utilities.
+
+*modules/gaming.nix*
+- Added cataclysm-dda-git to the gaming package selection, expanding available games for users.
+- Continued to maintain comprehensive gaming setup with Steam, gamemode, and various game packages.
+
+*modules/nix.nix*
+- Added explicit system platform specification (x86_64-linux) for improved build reproducibility and clarity.
+- Enhanced nixpkgs configuration with proper system architecture declaration.
+
+*pkgs/*
+- Complete restructuring and expansion of the experimental packages directory.
+- Removed legacy niri-companion.nix, niri-switch.nix, and niri-tag.nix individual files.
+- Created comprehensive package definitions: exo.nix, exopkgs.nix, ignis.nix, ignisgvc.nix, niricompanion.nix, niritag.nix, and stasis.nix.
+- Implemented proper Python package building for ignis with GTK4 Layer Shell support and GObject introspection.
+- Added ignis-gvc package for GNOME Volume Control integration with proper Meson build system.
+- Created niri-companion package with Python 3.13 support and proper dependency management including custom typer version.
+- Developed stasis package as a Rust application for session management with proper Wayland protocol support.
+- Added Exo desktop environment package with comprehensive desktop configuration management.
+- Updated pkgs.md documentation to reflect new package additions with proper descriptions and repository links.
+
+*.vscode/settings.json*
+- Added bashIde.explainshellEndpoint configuration for enhanced shell script development experience.
+- Improved development environment with better shell command documentation support.
+
+*Dot/waybar*
+- Removed waybar symbolic link from Dot directory, indicating cleanup of unused desktop configuration links.
+
+*General*
+- Significant expansion of desktop environment capabilities with comprehensive Wayland compositor support.
+- Enhanced package management with experimental build area containing cutting-edge desktop utilities.
+- Improved development workflow with additional tools and better IDE integration.
+- Major architectural improvements to Niri desktop environment for production-ready usage.
+- Better integration between various desktop components through proper XDG portal configuration.
+- Enhanced theming and widget system support through ignis and related packages.
+
 == 0.6.0
 *npins/sources.json*
 - Updated pins (sources.json), incremented version to 0.6.0. This update refreshed the commit hashes and versions for all tracked repositories, ensuring reproducibility and up-to-date sources.

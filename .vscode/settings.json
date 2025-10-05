@@ -25,4 +25,5 @@
       "source.fixAll.markdownlint": "explicit"
     }
   },
+  "bashIde.explainshellEndpoint": "http://localhost:5000"
 }

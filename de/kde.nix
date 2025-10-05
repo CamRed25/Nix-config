@@ -7,7 +7,12 @@ _: {
         layout = "us";
       };
     };
-    displayManager.sddm.enable = true;
+    displayManager = {
+      sddm = {
+        enable = true;
+        autoNumlock = true;
+      };
+    };
     desktopManager.plasma6.enable = true;
   };
 }

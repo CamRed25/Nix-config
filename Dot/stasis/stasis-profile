@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+# Quick Stasis profile switcher with rofi/fuzzel integration
+
+STASIS_CONFIG="$HOME/.config/stasis/stasis.rune"
+
+# Available profiles
+PROFILES=(
+    "default:Standard timeouts for general use"
+    "work:Conservative timeouts for work sessions"
+    "gaming:Extended timeouts for gaming"
+    "presentation:Minimal idle actions for presentations"
+)
+
+# Check if running in a terminal or launcher
+if [ -t 1 ]; then
+    # Terminal mode
+    echo "Stasis Profile Switcher"
+    echo "======================"
+    echo ""
+
+    for i in "${!PROFILES[@]}"; do
+        profile_info=(${PROFILES[i]//:/ })
+        printf "%d) %-12s - %s\n" $((i+1)) "${profile_info[0]}" "${profile_info[1]}"
+    done
+
+    echo ""
+    read -p "Select profile (1-${#PROFILES[@]}): " choice
+
+    if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -ge 1 ] && [ "$choice" -le "${#PROFILES[@]}" ]; then
+        selected_profile=(${PROFILES[$((choice-1))]//:/ })
+        profile_name="${selected_profile[0]}"
+    else
+        echo "Invalid selection"
+        exit 1
+    fi
+else
+    # GUI mode with launcher
+    profile_list=""
+    for profile in "${PROFILES[@]}"; do
+        profile_info=(${profile//:/ })
+        profile_list="${profile_list}${profile_info[0]} - ${profile_info[1]}\n"
+    done
+
+    # Try fuzzel first, then rofi
+    if command -v fuzzel >/dev/null 2>&1; then
+        selected=$(echo -e "$profile_list" | fuzzel --dmenu --prompt="Stasis Profile: ")
+    elif command -v rofi >/dev/null 2>&1; then
+        selected=$(echo -e "$profile_list" | rofi -dmenu -p "Stasis Profile")
+    else
+        notify-send "Error" "No launcher found (fuzzel or rofi required)"
+        exit 1
+    fi
+
+    if [ -z "$selected" ]; then
+        exit 0  # User cancelled
+    fi
+
+    profile_name=$(echo "$selected" | cut -d' ' -f1)
+fi
+
+# Apply the profile
+echo "Switching to profile: $profile_name"
+
+# For now, we'll update the config file directly
+# In the future, Stasis might support runtime profile switching
+if [ -f "$STASIS_CONFIG" ]; then
+    # Backup current config
+    cp "$STASIS_CONFIG" "${STASIS_CONFIG}.backup.$(date +%s)"
+
+    # Update active profile in config
+    sed -i "s/^active_profile = .*/active_profile = \"$profile_name\"/" "$STASIS_CONFIG"
+
+    # Restart stasis to apply new profile
+    if systemctl --user is-active stasis.service >/dev/null 2>&1; then
+        systemctl --user restart stasis.service
+
+        if command -v notify-send >/dev/null 2>&1; then
+            notify-send "Stasis" "Switched to $profile_name profile"
+        fi
+
+        echo "Profile switched to $profile_name and Stasis restarted"
+    else
+        echo "Profile updated in config. Start Stasis to apply."
+    fi
+else
+    echo "Stasis config not found at $STASIS_CONFIG"
+    echo "Run 'stasis-ctl install' first"
+    exit 1
+fi

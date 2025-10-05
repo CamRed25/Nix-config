@@ -1,3 +1,4 @@
 configuration.nix
 hardware-configuration.nix
 Dot/ #symbolic link sources to help me move things around and configure it in nix. (slightly hacky i would say.)
+Dot/colors/CRUSHED-Ice-Suru

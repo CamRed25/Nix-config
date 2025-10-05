@@ -14,7 +14,6 @@ Each pin refers to a specific version of a repository or channel, allowing for r
 | nixpkgs (unstable) | https://github.com/NixOS/nixpkgs | Main package set |
 | npins | https://github.com/andir/npins | Pin manager |
 | nyx | https://github.com/chaotic-cx/nyx | Extra packages |
-| stylix | https://github.com/nix-community/stylix | Theming (future use) |
 | Nilla-CLI | https://github.com/nilla-nix/cli | Deployment tooling |
 | home-manager | https://github.com/nix-community/home-manager | May replace later |
 | nilla | https://github.com/nilla-nix/nilla | Deployment core |

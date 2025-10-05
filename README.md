@@ -28,7 +28,7 @@ This repository contains my personal NixOS configuration setup. As this is my *f
 | Path | Description |
 |------|-------------|
 | hosts/ | Per-machine configurations. See [Hosts.md](hosts/Hosts.md). |
-| de/ | Wayland (niri) + KDE configs. See [DesktopEnvironments.md](de/DesktopEnvironments.md). |
+| de/ | Wayland (niri) + KDE configs. See [DesktopEnviroments.md](de/DesktopEnviroments.md). |
 | modules/ | Reusable modules (cleaning, gaming, dev, nvidia, etc). See [Modules.md](modules/Modules.md). |
 | npins/ | Pin definitions for reproducibility. See [Npins.md](npins/Npins.md). |
 | scripts/ | Rebuild / formatting scripts (WIP). |

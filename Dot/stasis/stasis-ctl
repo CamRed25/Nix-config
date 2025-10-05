@@ -1,0 +1,215 @@
+#!/usr/bin/env bash
+# Stasis management script for Niri desktop
+
+STASIS_CONFIG="$HOME/.config/stasis/stasis.rune"
+STASIS_LOG="$HOME/.local/share/stasis/stasis.log"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+print_help() {
+    echo -e "${BLUE}Stasis Management Script${NC}"
+    echo -e "${BLUE}========================${NC}"
+    echo ""
+    echo "Usage: $0 [COMMAND]"
+    echo ""
+    echo "Commands:"
+    echo "  start          Start Stasis daemon"
+    echo "  stop           Stop Stasis daemon"
+    echo "  restart        Restart Stasis daemon"
+    echo "  status         Show Stasis status"
+    echo "  logs           Show recent logs"
+    echo "  config         Edit configuration"
+    echo "  test           Test configuration syntax"
+    echo "  profiles       List available profiles"
+    echo "  profile [NAME] Switch to profile"
+    echo "  inhibit        Manually inhibit idle"
+    echo "  uninhibit      Remove manual inhibition"
+    echo "  install        Install/enable systemd service"
+    echo "  uninstall      Disable systemd service"
+    echo ""
+}
+
+ensure_config_dir() {
+    mkdir -p "$(dirname "$STASIS_CONFIG")"
+    mkdir -p "$(dirname "$STASIS_LOG")"
+}
+
+start_stasis() {
+    echo -e "${GREEN}Starting Stasis...${NC}"
+    systemctl --user start stasis.service
+    sleep 2
+    status_stasis
+}
+
+stop_stasis() {
+    echo -e "${YELLOW}Stopping Stasis...${NC}"
+    systemctl --user stop stasis.service
+}
+
+restart_stasis() {
+    echo -e "${YELLOW}Restarting Stasis...${NC}"
+    systemctl --user restart stasis.service
+    sleep 2
+    status_stasis
+}
+
+status_stasis() {
+    echo -e "${BLUE}Stasis Status:${NC}"
+    systemctl --user status stasis.service --no-pager -l
+}
+
+show_logs() {
+    echo -e "${BLUE}Recent Stasis Logs:${NC}"
+    if [ -f "$STASIS_LOG" ]; then
+        tail -50 "$STASIS_LOG"
+    else
+        echo "No log file found at $STASIS_LOG"
+    fi
+    echo ""
+    echo -e "${BLUE}Systemd Journal:${NC}"
+    journalctl --user -u stasis.service --no-pager -n 20
+}
+
+edit_config() {
+    ensure_config_dir
+    if [ ! -f "$STASIS_CONFIG" ]; then
+        echo -e "${YELLOW}Config not found, copying template...${NC}"
+        cp "/home/cam/Nix-config/Dot/stasis/stasis.rune" "$STASIS_CONFIG"
+    fi
+    ${EDITOR:-nano} "$STASIS_CONFIG"
+}
+
+test_config() {
+    echo -e "${BLUE}Testing Stasis configuration...${NC}"
+    # Stasis doesn't have a --test flag, so we'll try a dry run with info
+    if stasis --config "$STASIS_CONFIG" info >/dev/null 2>&1; then
+        echo -e "${GREEN}Configuration appears to be valid!${NC}"
+    else
+        echo -e "${RED}Configuration may have errors. Check logs for details.${NC}"
+        echo "You can also try starting Stasis manually to see specific errors:"
+        echo "  stasis --config $STASIS_CONFIG --verbose"
+        return 1
+    fi
+}
+
+list_profiles() {
+    echo -e "${BLUE}Available Stasis Profiles:${NC}"
+    echo "- default (standard timeouts)"
+    echo "- work (conservative, shorter timeouts)"
+    echo "- gaming (very long timeouts)"
+    echo "- presentation (minimal idle actions)"
+}
+
+switch_profile() {
+    local profile="$1"
+    if [ -z "$profile" ]; then
+        echo -e "${RED}Please specify a profile name${NC}"
+        list_profiles
+        return 1
+    fi
+
+    echo -e "${BLUE}Switching to profile: ${profile}${NC}"
+    # This would need Stasis runtime profile switching support
+    echo "Note: Profile switching at runtime requires Stasis daemon support"
+    echo "You may need to update the config file and restart for now"
+}
+
+manual_inhibit() {
+    echo -e "${BLUE}Manually inhibiting idle...${NC}"
+    # Create inhibit file (simple approach)
+    touch "/tmp/stasis-manual-inhibit"
+    echo "Idle manually inhibited. Remove with 'uninhibit' command."
+}
+
+manual_uninhibit() {
+    echo -e "${BLUE}Removing manual idle inhibition...${NC}"
+    rm -f "/tmp/stasis-manual-inhibit"
+    echo "Manual inhibition removed."
+}
+
+install_service() {
+    echo -e "${BLUE}Installing Stasis systemd service...${NC}"
+
+    # Copy service file
+    mkdir -p "$HOME/.config/systemd/user"
+    cp "/home/cam/Nix-config/Dot/systemd/user/stasis.service" "$HOME/.config/systemd/user/"
+
+    # Copy config
+    ensure_config_dir
+    if [ ! -f "$STASIS_CONFIG" ]; then
+        cp "/home/cam/Nix-config/Dot/stasis/stasis.rune" "$STASIS_CONFIG"
+    fi
+
+    # Enable and start
+    systemctl --user daemon-reload
+    systemctl --user enable stasis.service
+
+    echo -e "${GREEN}Stasis service installed and enabled!${NC}"
+    echo "Use 'start' command to start it now, or it will start on next login."
+}
+
+uninstall_service() {
+    echo -e "${YELLOW}Uninstalling Stasis systemd service...${NC}"
+    systemctl --user stop stasis.service 2>/dev/null || true
+    systemctl --user disable stasis.service 2>/dev/null || true
+    rm -f "$HOME/.config/systemd/user/stasis.service"
+    systemctl --user daemon-reload
+    echo -e "${GREEN}Stasis service uninstalled.${NC}"
+}
+
+# Main command processing
+case "${1:-help}" in
+    start)
+        start_stasis
+        ;;
+    stop)
+        stop_stasis
+        ;;
+    restart)
+        restart_stasis
+        ;;
+    status)
+        status_stasis
+        ;;
+    logs)
+        show_logs
+        ;;
+    config)
+        edit_config
+        ;;
+    test)
+        test_config
+        ;;
+    profiles)
+        list_profiles
+        ;;
+    profile)
+        switch_profile "$2"
+        ;;
+    inhibit)
+        manual_inhibit
+        ;;
+    uninhibit)
+        manual_uninhibit
+        ;;
+    install)
+        install_service
+        ;;
+    uninstall)
+        uninstall_service
+        ;;
+    help|--help|-h)
+        print_help
+        ;;
+    *)
+        echo -e "${RED}Unknown command: $1${NC}"
+        echo ""
+        print_help
+        exit 1
+        ;;
+esac

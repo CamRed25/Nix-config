@@ -45,7 +45,7 @@ in {
           sudo nh clean all &&
           nh clean all
         '';
-        new = "cd /home/cam/nix-config && npins update && npins upgrade"; # same as rbc but without the build step
+        new = "cd /home/cam/Nix-config && npins update && npins upgrade"; # same as rbc but without the build step
       };
     };
     nix-index = {
@@ -72,6 +72,7 @@ in {
     # Nix/dev utilities
     nix-health
     npins
+    nvfetcher
     nil
     nh
     # editors & terminals

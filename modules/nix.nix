@@ -23,5 +23,6 @@ _: {
     allowUnsupportedSystem = false;
     allowInsecure = false;
     allowPrivilegedProgram = false;
+    system = "x86_64-linux"; # Specify the system platform
   };
 }

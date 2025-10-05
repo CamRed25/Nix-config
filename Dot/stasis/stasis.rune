@@ -1,0 +1,87 @@
+@author "Cam Red"
+@description "Stasis configuration for Niri desktop environment"
+
+# Global application timeout (seconds)
+app_default_timeout 900
+
+# System commands
+resume_command "brightnessctl set 100%"
+pre_suspend_command "notify-send 'System suspending in 30 seconds' && sleep 30"
+
+# Enable media and inhibitor detection
+monitor_media true
+respect_idle_inhibitors true
+
+# Applications that should prevent idle when running
+inhibit_apps [
+  # Media players and streaming
+  r"firefox.*youtube"
+  r"firefox.*netflix"
+  r"firefox.*twitch"
+  "mpv"
+  "vlc"
+  "celluloid"
+  "totem"
+  "kodi"
+  "spotify"
+  "rhythmbox"
+
+  # Gaming
+  "steam"
+  "lutris"
+  "heroic"
+  "prismlauncher"
+  "mindustry"
+  "beyond-all-reason"
+  "cataclysm-dda"
+  r"steam_app_.*"
+  r".*\.exe"
+
+  # Development and intensive work
+  "obs"
+  "kdenlive"
+  "blender"
+  "gimp"
+  "inkscape"
+  "code"
+
+  # Video calls and communication
+  "discord"
+  "zoom"
+  "teams"
+  "slack"
+  "signal"
+
+  # Presentations and fullscreen apps
+  "libreoffice-impress"
+  r"evince.*fullscreen"
+]
+
+# Desktop idle actions
+lock_screen {
+  timeout 1800  # 30 minutes
+  command "gtklock --daemonize"
+}
+
+suspend {
+  timeout 5400  # 90 minutes
+  command "systemctl suspend"
+}
+
+# Monitor power management
+dpms {
+  timeout 900  # 15 minutes
+  command "niri msg action power-off-monitors"
+}
+
+# Brightness dimming before lock
+brightness {
+  timeout 600  # 10 minutes
+  command "brightnessctl set 20%"
+}
+
+# Custom notification before lock
+custom {
+  timeout 1770  # 29.5 minutes (30 seconds before lock)
+  command "notify-send 'Screen will lock in 30 seconds'"
+}

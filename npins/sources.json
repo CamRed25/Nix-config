@@ -20,9 +20,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "de5369834ff1f75246c46be89ef993392e961c26",
+      "revision": "5f06ceafc6c9b773a776b9195c3f47bbe1defa43",
       "url": null,
-      "hash": "sha256-0VP5cVd6DyibHNPC/IJ5Ut+KuNYUeKmr5ltzf+IcpjA="
+      "hash": "sha256-ILSPD0Dm8p0w0fCVzOx98ZH8yFDrR75GmwmH3fS2VnE="
     },
     "nilla": {
       "type": "Git",
@@ -44,9 +44,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "fae2efd2db9714e438864b7881b0b27888e9c07e",
+      "revision": "31ecfeccae770199d14f8caa754419365eec8860",
       "url": null,
-      "hash": "sha256-R9L5H8K8kvjOhsYJyOoyLSaaBFcsN6x1bUJW0qpFfyk="
+      "hash": "sha256-hcRvHNpGw6eRuVILr+eRzhtSYInroq4nJmugyXt2WRc="
     },
     "niri-companion": {
       "type": "Git",
@@ -56,21 +56,33 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "fd81b5e958956ed358563cf6b73c0d52cb44325b",
+      "revision": "e22504c58378e61befb9ec4bc814b1cfc1e0ec2d",
       "url": null,
-      "hash": "sha256-xo7OqbKttMUE7xBTBeNMnHaOx6+AnR6Vilh2CkHZMu4="
+      "hash": "sha256-uzufHCNjPw9QtkmH9s61mwbzuZBi7mA+/cG5KjlTRa4="
     },
-    "niri-tag": {
+    "niri-session-manager": {
       "type": "Git",
       "repository": {
         "type": "Git",
-        "url": "https://git.atagen.co/atagen/niri-tag.git"
+        "url": "https://github.com/MTeaHead/niri-session-manager.git"
       },
       "branch": "main",
       "submodules": false,
-      "revision": "0c1a104cea3de07c3416edb0d16db324daf5f61f",
+      "revision": "2d9ae35bb654ad0cdc5f646e5fee446bf3af083c",
       "url": null,
-      "hash": "sha256-fDyhFfRazK2SvPQVGi6tcMTpOAu6CoUhZSyaaE2edtE="
+      "hash": "sha256-5itrK5V9ZHGKIjKODTcneAanvs021Bk0CBJxBYRPaMs="
+    },
+    "niri-switch": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/Kiki-Bouba-Team/niri-switch.git"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "9630a304c99ad2a5a9423388ed4384de9b699063",
+      "url": null,
+      "hash": "sha256-X86uWt8jfixp7fGes2iph6+ia/qaMy9TDjP/nc0xboY="
     },
     "nix-index-database": {
       "type": "Git",
@@ -80,9 +92,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "fd2569ca2ef7d69f244cd9ffcb66a0540772ff85",
+      "revision": "0ca69684091aa3a6b1fe994c4afeff305b15e915",
       "url": null,
-      "hash": "sha256-xwjWRJTKDCjQ0iwfh7WhDhgcS0Wt3d1Yscg83mKBCn4="
+      "hash": "sha256-8NI1SqntLfKl6Q0Luemc3aIboezSJElofUrqipF5g78="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -92,15 +104,15 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "67a709cfe5d0643dafd798b0b613ed579de8be05",
+      "revision": "3441b5242af7577230a78ffb03542add264179ab",
       "url": null,
-      "hash": "sha256-w6cDExPBqbq7fTLo4dZ1ozDGeq3yV6dSN4n/sAaS6OM="
+      "hash": "sha256-spZegilADH0q5OngM86u6NmXxduCNv5eX9vCiUPhOYc="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre864673.a1f79a1770d0/nixexprs.tar.xz",
-      "hash": "sha256-YPoFUJMpbuPvIS4FJBn2Sv/iWsui9S26gu2ufFWEY0g="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre871291.0832d1b3a08f/nixexprs.tar.xz",
+      "hash": "sha256-jfaFRzLnOyHd6A+lZZkHedOHlVuKlP9XRybHH/UVGG0="
     },
     "npins": {
       "type": "Git",
@@ -122,9 +134,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "caf2b61bca3087f64cc33a2e9dabcf858e366d0f",
+      "revision": "3b5e4159d34116daf2ee6c23e0aec724b77ead30",
       "url": null,
-      "hash": "sha256-U6t946LDbMCFj8IQtF0I7/QvrhdTxBbOs4nwWSi2g7A="
+      "hash": "sha256-UGlF++rak42IQFVJSWH2efgnS7NWF4BDI9fnPD98H5Q="
     },
     "nyx": {
       "type": "Git",
@@ -134,21 +146,21 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "795ce3db53085b5e468b415a1a0cba19fad32c6f",
+      "revision": "bad02bbca5b5c6d45539a0d740ad0e21b1ba9afc",
       "url": null,
-      "hash": "sha256-e7AusEZhXO1ma2yXU0Yrn+18b+qEtwWymZ8AgibTBqU="
+      "hash": "sha256-sLQIlgDwMP3mEY2PwjGW+cL56QQ2n2WXoZ3GpG5QWOY="
     },
-    "stylix": {
+    "stasis": {
       "type": "Git",
       "repository": {
         "type": "Git",
-        "url": "https://github.com/nix-community/stylix.git"
+        "url": "https://github.com/saltnpepper97/stasis.git"
       },
-      "branch": "master",
+      "branch": "main",
       "submodules": false,
-      "revision": "0ce0103b498bb22f899ed8862d8d7f9503ed9cdb",
+      "revision": "316236a97cc385f4792a9acd30e03710b44f2b26",
       "url": null,
-      "hash": "sha256-f0W7qbsCqpi6swQ5w8H+0YrAbNwsHgCFDkNRMTJjqrE="
+      "hash": "sha256-5z5jsiYlfamUxEx0DhVYoKc+xy/HP8Np7j5Qe6zRKAM="
     }
   },
   "version": 6

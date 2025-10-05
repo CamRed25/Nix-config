@@ -1,5 +1,11 @@
 {
+  # Time zone configuration
   time.timeZone = "America/Chicago";
+
+  # Time synchronization service
+  services.timesyncd.enable = true;
+
+  # Locale configuration
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";

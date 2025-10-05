@@ -8,13 +8,7 @@ in {
       enable = true;
       protontricks.enable = true;
       gamescopeSession.enable = true;
-      fontPackages = with pkgs; [
-        corefonts
-        noto-fonts
-        noto-fonts-cjk-sans
-        noto-fonts-emoji
-        dejavu_fonts
-      ];
+      # Fonts handled by fonts.nix module
       extraPackages = with pkgs; [
         vulkan-loader
         libvdpau
@@ -59,6 +53,7 @@ in {
     beyond-all-reason
     mindustry
     prismlauncher
+    cataclysm-dda-git
     # limo #cant be built due to loot api changing.
     starsector
     heroic

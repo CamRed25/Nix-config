@@ -48,7 +48,6 @@ in {
     lxqt.lxqt-wayland-session
     xorg.libXcursor
     ghostty
-    mako
     xcb-util-cursor-HEAD
     icon-slicer
     xwayland-satellite

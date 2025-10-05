@@ -1,0 +1,200 @@
+# backup.nix
+# System backup configuration using Restic
+{pkgs, ...}: {
+  # Install backup tools
+  environment.systemPackages = with pkgs; [
+    restic
+    rclone # For cloud storage backends
+  ];
+
+  # Configure Restic backup service (disabled until password file is created)
+  # To enable: create /etc/nixos/restic-password and uncomment the services below
+  /*
+  services.restic.backups = {
+    # Main system backup
+    system = {
+      # Backup paths
+      paths = [
+        "/home/cam"
+        "/etc"
+        "/var/lib"
+        "/root"
+      ];
+
+      # Exclude patterns
+      exclude = [
+        # Large cache directories
+        "/home/cam/.cache"
+        "/home/cam/.local/share/Steam"
+        "/home/cam/.local/share/lutris"
+        "/home/cam/.mozilla/firefox/*/storage"
+        "/home/cam/.mozilla/firefox/*/cache2"
+
+        # Temporary files
+        "*.tmp"
+        "*.temp"
+        "/tmp"
+        "/var/tmp"
+
+        # System mount points
+        "/proc"
+        "/sys"
+        "/dev"
+        "/run"
+        "/mnt"
+        "/media"
+
+        # Large development directories (optional - comment out if you want these backed up)
+        "/home/cam/.local/share/containers"
+        "/home/cam/.docker"
+        "node_modules"
+        "target" # Rust build directory
+        ".git/objects" # Git objects (large)
+      ];
+
+      # Repository location - CHANGE THIS to your backup destination
+      # Examples:
+      # Local: repository = "/mnt/backup/restic-repo";
+      # SFTP: repository = "sftp:user@host:/path/to/repo";
+      # AWS S3: repository = "s3:s3.amazonaws.com/bucket-name";
+      # Backblaze B2: repository = "b2:bucket-name";
+      repository = "/var/backups/restic-repo"; # Default local location
+
+      # Password file for repository encryption
+      passwordFile = "/etc/nixos/restic-password";
+
+      # Backup schedule
+      timerConfig = {
+        OnCalendar = "daily";
+        Persistent = true;
+        RandomizedDelaySec = "1h";
+      };
+
+      # Backup retention policy
+      pruneOpts = [
+        "--keep-daily 7"
+        "--keep-weekly 4"
+        "--keep-monthly 6"
+        "--keep-yearly 2"
+      ];
+
+      # Additional options
+      extraOptions = [
+        "--verbose"
+        "--exclude-caches"
+        "--compression max"
+      ];
+
+      # Run backup check monthly
+      checkOpts = ["--read-data-subset=5%"];
+    };
+
+    # Quick backup for important documents only
+    documents = {
+      paths = [
+        "/home/cam/Documents"
+        "/home/cam/Pictures"
+        "/home/cam/Desktop"
+        "/home/cam/Nix-config"
+      ];
+
+      repository = "/var/backups/restic-docs-repo";
+      passwordFile = "/etc/nixos/restic-docs-password";
+
+      # More frequent backup for important files
+      timerConfig = {
+        OnCalendar = "*-*-* 06,12,18:00:00"; # 3 times daily
+        Persistent = true;
+      };
+
+      pruneOpts = [
+        "--keep-hourly 24"
+        "--keep-daily 14"
+        "--keep-weekly 8"
+        "--keep-monthly 12"
+      ];
+
+      extraOptions = [
+        "--verbose"
+        "--compression max"
+      ];
+    };
+  };
+  */
+
+  # Systemd service to initialize repositories if they don't exist
+  # (Also disabled until password files are created)
+  /*
+  systemd.services.restic-init = {
+    description = "Initialize Restic repositories";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = pkgs.writeShellScript "restic-init" ''
+        set -e
+
+        # Function to initialize repo if it doesn't exist
+        init_repo() {
+          local repo="$1"
+          local password_file="$2"
+
+          if [ ! -f "$password_file" ]; then
+            echo "Warning: Password file $password_file does not exist"
+            echo "Create it with: echo 'your-secure-password' | sudo tee $password_file"
+            echo "Then run: sudo chmod 600 $password_file"
+            return 1
+          fi
+
+          if ! ${pkgs.restic}/bin/restic -r "$repo" --password-file "$password_file" snapshots >/dev/null 2>&1; then
+            echo "Initializing repository: $repo"
+            ${pkgs.restic}/bin/restic -r "$repo" --password-file "$password_file" init
+          else
+            echo "Repository already exists: $repo"
+          fi
+        }
+
+        # Create backup directories
+        mkdir -p /var/backups
+
+        # Initialize repositories
+        init_repo "/var/backups/restic-repo" "/etc/nixos/restic-password"
+        init_repo "/var/backups/restic-docs-repo" "/etc/nixos/restic-docs-password"
+      '';
+    };
+    wantedBy = ["multi-user.target"];
+    after = ["local-fs.target"];
+  };
+
+  # Optional: Backup monitoring with simple notification
+  # (Also disabled until backups are enabled)
+  /*
+  systemd.services.backup-notify = {
+    description = "Backup completion notification";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = pkgs.writeShellScript "backup-notify" ''
+        # Check if backup completed successfully
+        if systemctl is-active --quiet restic-backups-system.service; then
+          echo "Backup completed successfully at $(date)" >> /var/log/backup-status.log
+        else
+          echo "Backup failed at $(date)" >> /var/log/backup-status.log
+          # Optional: send notification to user
+          # ${pkgs.libnotify}/bin/notify-send "Backup Failed" "System backup encountered an error"
+        fi
+      '';
+    };
+  };
+
+  # Create backup status log rotation
+  # (Also disabled until backups are enabled)
+  /*
+  services.logrotate.settings.backup-status = {
+    files = "/var/log/backup-status.log";
+    frequency = "monthly";
+    rotate = 6;
+    compress = true;
+    delaycompress = true;
+    missingok = true;
+    notifempty = true;
+  };
+  */
+}

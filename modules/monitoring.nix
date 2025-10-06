@@ -36,9 +36,9 @@
     mtr # Network diagnostic tool (traceroute + ping)
 
     # Process and system monitoring
-    htop # Interactive process monitor (already in dev.nix)
+    # htop # Already available in dev.nix
     btop # Modern system monitor
-    gtop # System monitor in your terminal
+    bandwhich # Modern per-process network monitor
 
     # Memory monitoring
     smem # Memory usage reporting tool
@@ -128,8 +128,6 @@
           # Check for critical issues and send notifications if needed
           if ${pkgs.smartmontools}/bin/smartctl -A /dev/sda 2>/dev/null | grep -E "(FAILING_NOW|In_the_past)"; then
             echo "CRITICAL: Disk health issues detected!" >> "$LOG_FILE"
-            # Optional: Send notification to user
-            # ${pkgs.libnotify}/bin/notify-send "Hardware Alert" "Disk health issues detected. Check /var/log/hardware-health/"
           fi
         '';
       };
@@ -186,9 +184,9 @@
       description = "Collect performance data every 4 hours";
       wantedBy = ["timers.target"];
       timerConfig = {
-        OnCalendar = "*-*-* 00,06,12,18:00:00";
+        OnCalendar = "*-*-* 00,12:00:00"; # Twice daily instead of 4x
         Persistent = true;
-        RandomizedDelaySec = "15m";
+        RandomizedDelaySec = "30m";
       };
     };
   };

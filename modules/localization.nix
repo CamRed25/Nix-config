@@ -18,4 +18,16 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  # Console and input configuration
+  console = {
+    useXkbConfig = true; # Use X11 keymap for console (automatically sets keyMap)
+  };
+
+  # Services for proper input handling
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+    options = "";
+  };
 }

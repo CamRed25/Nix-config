@@ -4,9 +4,8 @@
   # Hardware acceleration support
   hardware.graphics = {
     enable = true;
-    enable32Bit = true; # For 32-bit applications
+    enable32Bit = true;
 
-    # Additional graphics packages
     extraPackages = with pkgs; [
       # VAAPI (Video Acceleration API)
       intel-media-driver # For newer Intel GPUs (Broadwell+)
@@ -62,12 +61,21 @@
 
     # Audio players and tools
     pavucontrol # PulseAudio/PipeWire volume control
+    pwvucontrol # Modern PipeWire volume control
     playerctl # Media player control utility
+    amberol # Modern GNOME music player
+    blanket # Ambient sounds for focus
+    helvum # PipeWire visual patchbay
+    easyeffects # Audio effects for PipeWire
+    mousai # Song identification tool
 
     # Image viewers and basic editing
     feh # Fast image viewer
     imv # Wayland-native image viewer
+    loupe # Modern GTK4 image viewer
     gimp # Advanced image editor
+    drawing # Simple image editor like MS Paint
+    switcheroo # Image format converter
 
     # Document viewers
     evince # GNOME document viewer
@@ -95,9 +103,8 @@
     unrar # RAR extraction
 
     # Thumbnail generation
-    ffmpegthumbnailer # Video thumbnails
+    ffmpegthumbnailer
 
-    # Additional multimedia utilities
     mediainfo # Media file information
     exiftool # Metadata manipulation
 
@@ -120,7 +127,6 @@
   xdg.mime = {
     enable = true;
 
-    # Custom MIME type associations can be added here
     addedAssociations = {
       "video/mp4" = ["mpv.desktop"];
       "video/x-matroska" = ["mpv.desktop"];

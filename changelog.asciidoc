@@ -1,4 +1,41 @@
 = Changelog
+== 1.0.0
+*Module Reorganization and Cleanup*
+- Complete restructuring of module architecture for better maintainability and separation of concerns.
+- Created modules/homemanager/ folder for user-level configurations, moving firefox-theme.nix from main modules.
+- Extracted Wayland environment configuration into dedicated modules/wayland.nix module.
+- Consolidated system services into modules/desktop-services.nix for better organization.
+- Enhanced modules/security.nix with comprehensive PAM configuration for swaylock integration.
+- Simplified modules/modern-theming.nix to focus purely on theming, removing duplicated service configurations.
+
+*Firefox Theming Enhancement*
+- Implemented LittleFox Firefox theme with custom Reversal-Dark color scheme integration.
+- Added npins source management for LittleFox theme ensuring reproducible builds.
+- Enhanced Firefox theming with proper home-manager integration and CSS customization.
+
+*File Manager Migration*
+- Replaced Dolphin file manager with Nautilus throughout the configuration.
+- Updated all module references and desktop environment configurations.
+- Improved GTK application integration with consistent theming.
+
+*Configuration Cleanup*
+- Comprehensive cleanup of unnecessary comments and placeholder text across all .nix files.
+- Enhanced .gitignore with standard Nix/NixOS entries including result symlinks and build artifacts.
+- Removed outdated comments and example configurations that cluttered the codebase.
+- Improved code readability and maintainability through comment reduction.
+
+*Documentation Updates*
+- Updated README.md to reflect new modular organization with modules/homemanager/ structure.
+- Revised changelog to include recent architectural improvements and cleanup work.
+- Enhanced module documentation to clarify the new separation of concerns.
+- Improved directory structure documentation for better navigation.
+
+*Testing and Validation*
+- Verified configuration integrity through multiple successful rebuilds after reorganization.
+- Tested module imports and dependencies to ensure proper functionality.
+- Validated Firefox theming integration and file manager replacement.
+- Confirmed all services and desktop environment components work correctly with new structure.
+
 == 0.9.0
 *Stylix Integration Removal*
 - Removed Stylix system-wide theming configuration due to flakes-only requirement.

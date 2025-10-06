@@ -1,4 +1,44 @@
+# System-specific files
 configuration.nix
 hardware-configuration.nix
-Dot/ #symbolic link sources to help me move things around and configure it in nix. (slightly hacky i would say.)
-Dot/colors/CRUSHED-Ice-Suru
+
+# Nix build results and symlinks
+result
+result-*
+.direnv/
+.envrc
+
+# Scripts output
+scripts/results
+scripts/result
+
+# Backup and temporary files
+backup/
+*.tmp
+*.backup
+*~
+
+# Dotfiles symbolic links (for configuration management)
+Dot/ # symbolic link sources to help move things around and configure in nix
+Dot/colors/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache directories
+.cache/

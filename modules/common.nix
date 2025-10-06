@@ -20,5 +20,18 @@
   environment.systemPackages = with pkgs; [
     keepassxc
     kdePackages.ark
+
+    # Productivity applications
+    rnote # Handwritten notes (great for touchscreen)
+    foliate # eBook reader
+    dialect # Translation app
+
+    # Design utilities
+    contrast # Color contrast checker
+
+    # System utilities
+    junction # File opener chooser
+    valuta # Currency converter
+    warp # Secure file transfer
   ];
 }

@@ -14,7 +14,23 @@ _: {
       experimental-features = [
         "nix-command"
         "flakes"
+        "ca-derivations"
+        "recursive-nix"
       ];
+
+      # Performance optimizations
+      max-jobs = "auto";
+      cores = 0; # Use all available cores
+
+      # Build isolation and security
+      sandbox = true;
+
+      # Keep build logs for debugging
+      keep-outputs = false;
+      keep-derivations = false;
+
+      # Warn about dirty Git repos
+      warn-dirty = true;
     };
   };
   nixpkgs.config = {

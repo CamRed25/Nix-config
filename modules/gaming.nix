@@ -13,7 +13,7 @@ in {
         vulkan-loader
         libvdpau
         gamemode
-        mangohud
+        # mangohud # Moved to main packages to avoid duplication
         libva
         libxkbcommon
         libinput
@@ -50,19 +50,35 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-    beyond-all-reason
-    mindustry
-    prismlauncher
-    cataclysm-dda-git
-    # limo #cant be built due to loot api changing.
-    starsector
-    heroic
-    mangohud
-    #modrinth-app-unwrapped #never worked for me x11 or wayland.
-    discord
-    lutris
-    dxvk
-    mesa
+    # === Games ===
+    beyond-all-reason # RTS game
+    mindustry # Tower defense/factory game
+    prismlauncher # Minecraft launcher
+    cataclysm-dda-git # Survival roguelike
+    starsector # Space exploration/combat
+
+    # === Game Launchers ===
+    heroic # Epic Games launcher
+    lutris # Multi-platform game launcher
+    discord # Gaming communication
+
+    # === Gaming Tools ===
+    mangohud # Performance overlay
+    dxvk # DirectX to Vulkan translation
+    mesa # OpenGL implementation
+
+    # === Controller Support ===
+    antimicrox # Gamepad to keyboard mapping
+    jstest-gtk # Joystick testing tool
+
+    # === Performance Tools ===
+    gamemode # CPU governor optimization (also in programs)
+
+    # === Additional Launchers ===
     nur.repos.ataraxiasjel.gamma-launcher
+
+    # === Wine Gaming ===
+    bottles # Wine prefix manager (alternative to Lutris)
+    winetricks # Wine configuration utility
   ];
 }

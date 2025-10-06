@@ -28,12 +28,14 @@ in {
     };
     fish = {
       enable = true;
-      shellInit = lib.mkIf config.programs.fish.enable ''
-        # Custom fish shell init commands here
-      '';
+      shellInit =
+        lib.mkIf config.programs.fish.enable ''
+        '';
       shellAliases = {
         ls = "ls -R";
         build = "cd /home/cam/Nix-config/scripts && ./rebuild.sh";
+        sw = "cd /home/cam/Nix-config/scripts && ./rebuild.sh switch";
+        testbuild = "cd /home/cam/Nix-config/scripts && ./rebuild.sh dry-run"; # dry run before switching
         rbc = "cd /home/cam/Nix-config/scripts && ./RBC.sh"; # does a complete build, aka: refreshes pins and updates and grades npins, then does a build.
         clean = ''
           sudo nix-collect-garbage -d &&
@@ -80,6 +82,10 @@ in {
     # dev libraries/tools
     vulkan-tools
     glxinfo
-    # add future dev stuff here
+    # development utilities
+    d-spy # D-Bus explorer
+    commit # Git commit editor
+    meld # Visual diff tool
+    nur.repos.ataraxiasjel.gamma-launcher
   ];
 }

@@ -7,6 +7,16 @@
     polkit.enable = true;
     rtkit.enable = true; # Real-time scheduling for audio
 
+    # PAM configuration for screen lockers
+    pam.services.gtklock = {
+      text = ''
+        auth      include login
+        account   include login
+        password  include login
+        session   include login
+      '';
+    };
+
     # AppArmor security framework
     apparmor = {
       enable = true;
@@ -39,28 +49,17 @@
 
     # Allowed TCP ports (customize based on your needs)
     allowedTCPPorts = [
-      # Add specific ports you need, examples:
-      # 22    # SSH (uncomment if you need remote access)
-      # 80    # HTTP (for local web development)
-      # 443   # HTTPS (for local web development)
-      # 3000  # Common development server port
-      # 8080  # Alternative HTTP port
     ];
 
     # Allowed UDP ports
     allowedUDPPorts = [
-      # Add specific UDP ports you need, examples:
-      # 53    # DNS (if running local DNS server)
-      # 123   # NTP (time synchronization - usually handled automatically)
     ];
 
     # Port ranges (if needed for specific applications)
     allowedTCPPortRanges = [
-      # Example: { from = 8000; to = 8999; } # Development server range
     ];
 
     allowedUDPPortRanges = [
-      # Example: { from = 60000; to = 61000; } # Game server range
     ];
 
     # Interfaces to trust completely (be careful with this)
@@ -123,23 +122,39 @@
     };
   };
 
+  # Security programs (prefer programs.* over environment.systemPackages)
+  programs = {
+    # GNU Privacy Guard with better system integration
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      pinentryPackage = pkgs.pinentry-gtk2;
+    };
+
+    # Wireshark with proper permissions
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
+  };
+
   # Additional security packages
   environment.systemPackages = with pkgs; [
     # Network security tools
     nmap # Network discovery and security auditing
     netcat-gnu # Network utility for debugging and exploration
     tcpdump # Network packet analyzer
-    wireshark # Network protocol analyzer (GUI)
+    # wireshark # Moved to programs.wireshark for better integration
 
     # System security tools
     lynis # Security auditing tool
 
     # Cryptography tools
-    gnupg # GNU Privacy Guard
+    # gnupg # Moved to programs.gnupg for better integration
     openssl # SSL/TLS toolkit
 
     # Password and authentication
-    keepassxc # Already in common.nix, but ensuring it's available
+    # keepassxc # Already available in common.nix
 
     # File integrity monitoring
     aide # Advanced Intrusion Detection Environment

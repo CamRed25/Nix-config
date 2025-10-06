@@ -16,7 +16,7 @@ home_manager_pin=$(nix eval --raw -f ./npins/default.nix home-manager)
 nix_path="nixpkgs=${nixpkgs_pin}:home-manager=${home_manager_pin}:nixos-config=/home/cam/Nix-config/configuration.nix"
 
 echo "Rebuilding NixOS..."
-sudo env NIX_PATH="${nix_path}" nixos-rebuild --no-reexec "${1:-switch}" "$@"
+sudo env NIX_PATH="${nix_path}" nixos-rebuild --no-reexec "${1:-switch}"
 
 echo "Running nix-health to verify Nix system health..."
 # Run nix-health, assuming it is installed or available via nix run

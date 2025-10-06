@@ -15,11 +15,15 @@ Each pin refers to a specific version of a repository or channel, allowing for r
 | npins | https://github.com/andir/npins | Pin manager |
 | nyx | https://github.com/chaotic-cx/nyx | Extra packages |
 | Nilla-CLI | https://github.com/nilla-nix/cli | Deployment tooling |
-| home-manager | https://github.com/nix-community/home-manager | May replace later |
+| home-manager | https://github.com/nix-community/home-manager | User environment management |
 | nilla | https://github.com/nilla-nix/nilla | Deployment core |
 | nilla-utils | https://github.com/arnarg/nilla-utils | Helpers |
 | nur-combined | https://github.com/nix-community/nur-combined | Community overlay |
 | niri-companion | https://github.com/dybdeskarphet/niri-companion | Wayland helper |
+| LittleFox | https://github.com/biglavis/LittleFox | Firefox CSS theme |
+| niri-session-manager | https://github.com/MTeaHead/niri-session-manager | Niri session management |
+| niri-switch | https://github.com/Kiki-Bouba-Team/niri-switch | Fast Alt-Tab for Niri |
+| stasis | https://github.com/saltnpepper97/stasis | Intelligent idle manager |
 
 ---
 

@@ -1,0 +1,29 @@
+{
+  "name": "reversal-dark-theme",
+  "displayName": "Reversal Dark",
+  "description": "A clean, professional dark theme with blue accents",
+  "version": "1.0.0",
+  "publisher": "cam",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Reversal Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/reversal-dark.json"
+      }
+    ]
+  },
+  "keywords": [
+    "dark",
+    "theme",
+    "reversal",
+    "blue",
+    "professional"
+  ]
+}
